@@ -53,6 +53,17 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+// *** ADIÇÃO: Configuração CORS para resolver "Failed to fetch" ***
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSwaggerUI", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 // Configuração do logger para injeção de dependência (usado em controllers ou outros serviços)
 builder.Services.AddLogging();
 
@@ -104,9 +115,7 @@ builder.Services.AddAuthorization();
 // FIM: Adição e Configuração de Serviços
 // ===================================================================================
 
-
 var app = builder.Build();
-
 
 // ===================================================================================
 // INÍCIO: Configuração do Pipeline de Requisições HTTP
@@ -124,6 +133,9 @@ if (app.Environment.IsDevelopment())
 
 // Redirecionamento HTTPS (boa prática de segurança)
 app.UseHttpsRedirection();
+
+// *** ADIÇÃO: Middleware CORS - DEVE vir ANTES da autenticação ***
+app.UseCors("AllowSwaggerUI");
 
 // --- INÍCIO DA ORDEM DOS MIDDLEWARE JWT PARA .NET 8.0 ---
 // IMPORTANTE: UseAuthentication DEVE VIR ANTES de UseAuthorization

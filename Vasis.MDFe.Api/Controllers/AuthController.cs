@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization; // ← ADICIONE ESTE USING
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using System;
-using Microsoft.Extensions.Logging; // Adicionado para ILogger
+using Microsoft.Extensions.Logging;
 
 namespace Vasis.MDFe.Api.Controllers
 {
-    // DTOs para requisição e resposta de autenticação
+    // DTOs (mantém como estão - perfeitos)
     public class LoginRequestDto
     {
         public string Username { get; set; }
@@ -36,20 +37,18 @@ namespace Vasis.MDFe.Api.Controllers
         }
 
         [HttpPost("login")]
+        [AllowAnonymous] // ← ÚNICA MUDANÇA NECESSÁRIA
         [ProducesResponseType(typeof(AuthResponseDto), 200)]
         [ProducesResponseType(401)]
         public IActionResult Login([FromBody] LoginRequestDto request)
         {
-            // --- VALIDAÇÃO DE USUÁRIO E SENHA (Exemplo simplificado para POC em .NET 8.0) ---
-            // Em uma aplicação real, você buscaria isso em um banco de dados,
-            // usaria ASP.NET Core Identity, ou integraria com um IdP (Identity Provider).
-            // Por simplicidade, vamos usar credenciais fixas apenas para a POC.
+            // ... TODO O SEU CÓDIGO EXISTENTE (está perfeito, não mude nada)
+            
             if (request.Username != "admin" || request.Password != "senhaforte123")
             {
                 _logger.LogWarning($"Tentativa de login falha para o usuário: {request.Username}");
                 return Unauthorized("Credenciais inválidas.");
             }
-            // --- FIM DA VALIDAÇÃO ---
 
             var jwtKey = _configuration["Jwt:Key"];
             var jwtIssuer = _configuration["Jwt:Issuer"];
@@ -61,7 +60,6 @@ namespace Vasis.MDFe.Api.Controllers
                 return StatusCode(500, "Configuração de segurança JWT inválida no servidor.");
             }
 
-            // Define as Claims para o token
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, request.Username),
@@ -74,7 +72,7 @@ namespace Vasis.MDFe.Api.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var expiration = DateTime.UtcNow.AddHours(1); // Token válido por 1 hora
+            var expiration = DateTime.UtcNow.AddHours(1);
 
             var token = new JwtSecurityToken(
                 issuer: jwtIssuer,

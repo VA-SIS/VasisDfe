@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
+﻿using DFe.Classes.Flags;    // Para ServicoMDFeStatusServico
+using MDFe.Servicos.StatusServicoMDFe;
 // Usings para os projetos de código fonte do Zeus DFe.NET
 // Removendo aliases e usando full namespace where needed
 using MDFe.Utils.Configuracoes;           // Para MDFeConfiguracao
-using MDFe.Servicos.StatusServicoMDFe;
-using DFe.Classes.Flags;    // Para ServicoMDFeStatusServico
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Vasis.MDFe.Api.Controllers
 {
@@ -49,6 +49,7 @@ namespace Vasis.MDFe.Api.Controllers
         [HttpGet("source-integration-health")]
         [ProducesResponseType(typeof(string), 200)]
         [ProducesResponseType(typeof(string), 500)]
+        [Authorize]
         public IActionResult GetSourceIntegrationHealth()
         {
             _logger.LogInformation("Iniciando teste de integração com o código fonte do Zeus DFe.NET (MDF-e).");
