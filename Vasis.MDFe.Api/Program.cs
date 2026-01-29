@@ -118,7 +118,7 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // ===================================================================================
-// INÍCIO: Configuração do Pipeline de Requisições HTTP
+// INÍCIO: Configuração do Pipeline de Requisições HTTP - ORDEM CORRIGIDA
 // ===================================================================================
 
 // Configurações para ambiente de Desenvolvimento
@@ -134,14 +134,12 @@ if (app.Environment.IsDevelopment())
 // Redirecionamento HTTPS (boa prática de segurança)
 app.UseHttpsRedirection();
 
-// *** ADIÇÃO: Middleware CORS - DEVE vir ANTES da autenticação ***
-app.UseCors("AllowSwaggerUI");
-
-// --- INÍCIO DA ORDEM DOS MIDDLEWARE JWT PARA .NET 8.0 ---
-// IMPORTANTE: UseAuthentication DEVE VIR ANTES de UseAuthorization
-app.UseAuthentication();
-app.UseAuthorization();
-// --- FIM DA ORDEM DOS MIDDLEWARE ---
+// --- ORDEM CORRETA DOS MIDDLEWARES JWT ---
+// CRÍTICO: UseAuthentication DEVE VIR ANTES de UseAuthorization
+// CRÍTICO: CORS deve vir APÓS a autenticação para não interferir
+app.UseAuthentication();        // 1º - Identifica usuário via token JWT
+app.UseAuthorization();         // 2º - Verifica permissões do usuário identificado
+app.UseCors("AllowSwaggerUI");  // 3º - CORS após autenticação (CORREÇÃO APLICADA)
 
 // Mapeia os controllers da aplicação
 app.MapControllers();
