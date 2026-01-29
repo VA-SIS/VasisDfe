@@ -97,7 +97,7 @@ namespace Vasis.MDFe.Api.Controllers
                 MDFeConfiguracao.Instancia.CaminhoSchemas = schemasPath;
                 MDFeConfiguracao.Instancia.CaminhoSalvarXml = xmlSavePath;
                 MDFeConfiguracao.Instancia.IsSalvarXml = true;
-                MDFeConfiguracao.Instancia.VersaoWebService.VersaoLayout = mdfeVersaoLayout;
+                MDFeConfiguracao.Instancia.VersaoWebService.VersaoLayout = (global::MDFe.Utils.Flags.VersaoServico)mdfeVersaoLayout;
                 MDFeConfiguracao.Instancia.VersaoWebService.UfEmitente = ufEmitente;
 
                 _logger.LogInformation($"MDFeConfiguracao.Instancia configurada: Ambiente={MDFeConfiguracao.Instancia.VersaoWebService.TipoAmbiente}, Layout={MDFeConfiguracao.Instancia.VersaoWebService.VersaoLayout}, UF={MDFeConfiguracao.Instancia.VersaoWebService.UfEmitente}.");
