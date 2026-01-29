@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a87c5194-6c25-4cd1-9c50-5485dc3dbcb9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,16 @@
     <ProjectReference Include="..\MDFe.Servicos\MDFe.Servicos.csproj" />
     <ProjectReference Include="..\MDFe.Utils\MDFe.Utils.csproj" />
     <ProjectReference Include="..\MDFe.Wsdl\MDFe.Wsdl.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="cert\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="cert\CertificadoA1.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
