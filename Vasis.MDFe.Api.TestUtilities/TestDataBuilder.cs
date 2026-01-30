@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Net.Http;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace Vasis.MDFe.Api.TestUtilities
 {
@@ -29,10 +31,10 @@ namespace Vasis.MDFe.Api.TestUtilities
         {
             public static StringContent CreateJsonContent(object obj)
             {
-                return new StringContent(
-                    JsonConvert.SerializeObject(obj),
-                    Encoding.UTF8,
-                    "application/json");
+                var json = JsonConvert.SerializeObject(obj);
+                var content = new StringContent(json, Encoding.UTF8);
+                content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                return content;
             }
         }
 

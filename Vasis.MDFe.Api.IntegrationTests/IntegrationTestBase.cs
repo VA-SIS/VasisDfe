@@ -45,10 +45,7 @@ namespace Vasis.MDFe.Api.IntegrationTests
                 Password = "senhaforte123"
             };
 
-            var loginContent = new StringContent(
-                JsonConvert.SerializeObject(loginRequest),
-                Encoding.UTF8,
-                "application/json");
+            var loginContent = CreateJsonContent(loginRequest);
 
             var response = await _client.PostAsync("/api/Auth/login", loginContent);
             response.EnsureSuccessStatusCode();
@@ -73,10 +70,10 @@ namespace Vasis.MDFe.Api.IntegrationTests
         /// </summary>
         protected StringContent CreateJsonContent(object obj)
         {
-            return new StringContent(
-                JsonConvert.SerializeObject(obj),
-                Encoding.UTF8,
-                "application/json");
+            var json = JsonConvert.SerializeObject(obj);
+            var content = new StringContent(json, Encoding.UTF8);
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+            return content;
         }
     }
 }
