@@ -148,3 +148,5 @@ app.Run();
 // ===================================================================================
 // FIM: Configuração do Pipeline de Requisições HTTP
 // ===================================================================================
+
+public partial class Program { } // ADICIONE ESTA LINHA AQUI

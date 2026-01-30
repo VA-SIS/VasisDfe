@@ -1,0 +1,1077 @@
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\NFe.Utils.Testes\bin\Debug\net6.0\NFe.Utils.Testes.dll (.NETCoreApp,Version=v6.0)
+Versão do VSTest 18.0.1 (x64)
+
+Iniciando execução de teste, espere...
+1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\NFe.Utils.Testes\bin\Debug\net6.0\NFe.Utils.Testes.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.6+bf9b858c26 (64-bit .NET 6.0.36)
+[xUnit.net 00:00:01.41]   Discovering: NFe.Utils.Testes
+[xUnit.net 00:00:02.68]   Discovered:  NFe.Utils.Testes
+[xUnit.net 00:00:02.69]   Starting:    NFe.Utils.Testes
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [279 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: ES, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SC, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AL, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PI, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PI, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SP, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PI, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PB, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: MG, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: TO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AC, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: DF, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PB, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AL, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: DF, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: MG, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [18 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AP, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AP, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SP, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: MG, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RS, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PB, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: ES, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AC, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: MG, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: ES, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: DF, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RN, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RN, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: TO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [2 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AL, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RR, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: ES, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SC, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: DF, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: AL, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: TO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: SE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RN, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RS, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PB, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RN, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RR, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: RO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: PI, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: TO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-AN -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: BA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: BA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: GO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [10 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: AM, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MT, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: BA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: GO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PR, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PR, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: GO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: GO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MS, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MT, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: AM, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: AM, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MT, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [2 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MS, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: BA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MT, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: PE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: AM, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> SVC-RS -> Autorização -> 4.0(uf: MS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MT, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: DF, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AM, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: ES, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: BA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MS, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AM, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PB, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: TO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PB, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: ES, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RN, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PI, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: GO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PI, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AM, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [2 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MT, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RR, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AC, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: BA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: BA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AL, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: TO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AP, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MA, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AL, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PR, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MG, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AL, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MG, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SC, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MG, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MT, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RN, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RS, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: CE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: ES, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: DF, tipoAmbiente: Producao) [471 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MT, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AM, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RN, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: SE, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PE, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PI, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: SP, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RN, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MS, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PR, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AP, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: BA, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AP, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PB, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PA, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: TO, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PB, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AC, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PE, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MS, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AC, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: DF, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: SP, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RO, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RJ, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AL, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RR, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: BA, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PI, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RS, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RS, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RJ, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RR, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: SE, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PR, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MA, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: GO, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: GO, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: PA, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MA, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: MT, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: RO, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AL, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: AM, tipoAmbiente: Producao) [< 1 ms]
+  Aprovado NFe.Utils.Testes.ExtinfNFeSuplTestes.UrlQrCode2DeveTerminarComQueryPararametro(estado: TO, tipoAmbiente: Homologacao) [< 1 ms]
+  Aprovado Dado dados em string para geração do hex sha1 de string, quando obter hex sha1 de string, então deve obter hex sha1 de string.(dadosEmString: "73456789101112131415161718192021222324252627|2|2|A"···, stringEsperada: "ebbb014e73ff18fec652350da4a24907fad21297") [475 ms]
+  Aprovado Dado dados em string para geração do hex sha1 de string, quando obter hex sha1 de string, então deve obter hex sha1 de string.(dadosEmString: "65829374618273645564738291028374618273645564|1|1|B"···, stringEsperada: "19f80bbd273e606d206880f79ea56a671b263586") [< 1 ms]
+  Aprovado Dado dados em string para geração do hex sha1 de string, quando obter hex sha1 de string, então deve obter hex sha1 de string.(dadosEmString: "92037465012398765432100011223344556677889900|2|1|F"···, stringEsperada: "8037b331c661ce2bf6d070b7e703176972b82199") [< 1 ms]
+  Aprovado Dado dados em string para geração do hex sha1 de string, quando obter hex sha1 de string, então deve obter hex sha1 de string.(dadosEmString: "87122345099887766554433221100009988776655443|1|2|9"···, stringEsperada: "5994d3d62ca107c89677e7bede2f1e6a9371d9da") [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MA, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: TO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: BA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: CE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RJ, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: ES, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AP, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: DF, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: DF, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PI, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RR, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RS, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SC, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: GO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RN, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [3 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SP, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PB, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [4 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MG, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AP, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MA, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AM, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PE, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MS, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SC, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: GO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PI, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RN, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SP, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: TO, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PB, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PE, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RO, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: DF, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: MT, tipoAmbiente: Homologacao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AC, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RR, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: RS, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: AL, tipoAmbiente: Producao, servicoAutorizacao: NFeRetAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: GO, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: PR, tipoAmbiente: Producao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+  Aprovado NFe -> Normal -> Autorização -> 4.0(uf: SE, tipoAmbiente: Homologacao, servicoAutorizacao: NFeAutorizacao) [< 1 ms]
+[xUnit.net 00:00:03.37]   Finished:    NFe.Utils.Testes
+  Aprovado NFe.Utils.Testes.EnderecadorTestes.DeveUrlAmEstarCorretaParaNFeAutorizacaoVersao4 [2 ms]
+  Aprovado NFe.Utils.Testes.EnderecadorTestes.DeveUrlBaEstarCorretaParaNFeAutorizacaoVersao4 [< 1 ms]
+  Aprovado NFe.Utils.Testes.EnderecadorTestes.DeveUrlSpEstarCorretaParaNFeAutorizacaoVersao4 [< 1 ms]
+
+Execução de Teste Bem-sucedida.
+Total de testes: 273
+     Aprovados: 273
+Tempo total: 6,2351 Segundos
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\DFe.Testes\bin\Debug\net6.0\DFe.Testes.dll (.NETCoreApp,Version=v6.0)
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\NFe.Classes.Testes\bin\Debug\net6.0\NFe.Classes.Testes.dll (.NETCoreApp,Version=v6.0)
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\bin\Debug\net8.0\Vasis.MDFe.Api.IntegrationTests.dll (.NETCoreApp,Version=v8.0)
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.UnitTests\bin\Debug\net8.0\Vasis.MDFe.Api.UnitTests.dll (.NETCoreApp,Version=v8.0)
+Versão do VSTest 18.0.1 (x64)
+
+Versão do VSTest 18.0.1 (x64)
+Versão do VSTest 18.0.1 (x64)
+
+
+Versão do VSTest 18.0.1 (x64)
+
+Iniciando execução de teste, espere...
+Iniciando execução de teste, espere...
+1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.UnitTests\bin\Debug\net8.0\Vasis.MDFe.Api.UnitTests.dll
+1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\DFe.Testes\bin\Debug\net6.0\DFe.Testes.dll
+Iniciando execução de teste, espere...
+1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\bin\Debug\net8.0\Vasis.MDFe.Api.IntegrationTests.dll
+Iniciando execução de teste, espere...
+1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\NFe.Classes.Testes\bin\Debug\net6.0\NFe.Classes.Testes.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.23)
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.23)
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,342,0,34) [263 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,346,0,35) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3452,0,35) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3450,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,332,0,33) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,336,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3352,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3350,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3050,0,30) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3150,0,32) [< 1 ms]
+  Aprovado Dado valor para arredondamento nulo, quando o arredondar, então deve retornar nulo. [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytesIgualDoSha1CryptoServiceProvider (92037465012398765432100011223344556677889900|2|1|F1A9B237CD8800FFE234A9912B674CFA1) [599 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytesIgualDoSha1CryptoServiceProvider (87122345099887766554433221100009988776655443) [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytesIgualDoSha1CryptoServiceProvider (73456789101112131415161718192021222324252627) [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytesIgualDoSha1CryptoServiceProvider (65829374618273645564738291028374618273645564) [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytes (92037465012398765432100011223344556677889900|2|1|F1A9B237CD8800FFE234A9912B674CFA1,System.Byte[]) [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytes (87122345099887766554433221100009988776655443,System.Byte[]) [< 1 ms]
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytes (73456789101112131415161718192021222324252627,System.Byte[]) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (323,5650,2) [564 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (5,5650,2) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (3,665,2) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (4,775,2) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (323,5650,3) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (5,5650,3) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (4,77575,4) [< 1 ms]
+  Aprovado DadoUmValorEUmaQuantidadeDeCasasDecimaisQuandoOArredondamentoForFeitoUtilizandoOsMetodosDaDfeENfeEntaoOValorArredondadoDeveSerIgualEmAmbosOsCasos (5,445545,5) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,342,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,346,0,35) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3452,0,35) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3450,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,332,0,33) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,336,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3352,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3350,0,34) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3050,0,30) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarEntaoDeveRetornarOValorArredondadoSeguindoAsNormasDaAbnt (0,3150,0,32) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,4567,2,123,45) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,4599,2,123,45) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,451,2,123,45) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,4001,3,123,400) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,0009,3,123,000) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (123,0,2,123,00) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (0,9999,3,0,999) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (0,2,0,00) [< 1 ms]
+  Aprovado DadoValorParaArredondamentoQuandoArredondarParaBaixoEntaoDeveRetornarOValorArredondadoParaBaixo (987,654,0,987) [< 1 ms]
+
+Execução de Teste Bem-sucedida.
+Total de testes: 27
+     Aprovados: 27
+Tempo total: 5,2163 Segundos
+  Aprovado DadoDadosParaGeracaoDoHashSha1BytesQuandoObterHashSha1BytesEntaoDeveObterHashSha1EmBytes (65829374618273645564738291028374618273645564,System.Byte[]) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSAliq_Teste (cofins01,1000,1,10) [856 ms]
+  Aprovado ObterCOFINSBasico_COFINSAliq_Teste (cofins02,1000,1,10) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSQtde_Teste (cofins03,1000,1,10) [1 ms]
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins04) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins05) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins06) [< 1 ms]
+Execução de teste para C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.RegressionTests\bin\Debug\net8.0\Vasis.MDFe.Api.RegressionTests.dll (.NETCoreApp,Version=v8.0)
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins07) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins08) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSNT_Teste (cofins09) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins49,1000,1,10,1000,1) [5 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins50,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins51,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins52,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins53,1000,1,10,1000,1) [< 1 ms]
+Versão do VSTest 18.0.1 (x64)
+  Aprovado 
+ObterCOFINSBasico_COFINSOutr_Teste (cofins54,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins55,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins56,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins60,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins61,1000,1,10,1000,1) [< 1 ms]
+  Aprovado [xUnit.net 00:00:03.38]   Discovering: Vasis.MDFe.Api.UnitTests
+ObterCOFINSBasico_COFINSOutr_Teste (cofins62,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins63,1000,1,10,1000,1) [< 1 ms]
+Iniciando execução de teste, espere...
+  Aprovado [xUnit.net 00:00:03.51]   Discovered:  Vasis.MDFe.Api.UnitTests
+ObterCOFINSBasico_COFINSOutr_Teste (cofins64,1000,1,10,1000,1) [< 1 ms]
+  Aprovado [xUnit.net 00:00:03.51]   Starting:    Vasis.MDFe.Api.UnitTests
+ObterCOFINSBasico_COFINSOutr_Teste (cofins65,1000,1,10,1000,1) [< 1 ms]
+  Aprovado 1 arquivos de teste no total corresponderam ao padrão especificado.
+C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.RegressionTests\bin\Debug\net8.0\Vasis.MDFe.Api.RegressionTests.dll
+ObterCOFINSBasico_COFINSOutr_Teste (cofins66,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins67,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins70,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins71,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins72,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins73,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins74,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins75,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins98,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterCOFINSBasico_COFINSOutr_Teste (cofins99,1000,1,10,1000,1) [< 1 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmEstrangeiraAdquiridaBrasil,DbiMargemValorAgregado,1000,18,180,,) [15 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmEstrangeiraAdquiridaBrasilSemSimilar,DbiMargemValorAgregado,1000,18,180,0,0) [< 1 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmEstrangeiraImportacaoDireta,DbiValorOperacao,1000,18,180,0,0) [< 1 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmEstrangeiraImportacaoDiretaSemSimilar,DbiMargemValorAgregado,1000,18,180,,) [< 1 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmNacional,DbiPrecoTabelado,1000,18,180,,) [< 1 ms]
+  Aprovado ObterICMSBasico_ICMS00_Teste (RegimeNormal,OmNacionalConteudoImportacaoInferiorIgual40,DbiPauta,1000,18,180,0,0) [< 1 ms]
+  Aprovado [xUnit.net 00:00:03.94]   Discovering: Vasis.MDFe.Api.IntegrationTests
+ObterICMSBasico_ICMS10_Teste (RegimeNormal,OmEstrangeiraAdquiridaBrasil,DbiMargemValorAgregado,1000,18,180,0,0,0,DbisListaNegativa,15,2,1000,18,25,0,0,0) [12 ms]
+  Aprovado ObterICMSBasico_ICMS10_Teste (RegimeNormal,OmEstrangeiraAdquiridaBrasilSemSimilar,DbiMargemValorAgregado,1000,18,180,0,0,0,DbisListaNegativa,15,2,1000,18,25,100,10,10) [< 1 ms]
+[xUnit.net 00:00:04.05]   Discovered:  Vasis.MDFe.Api.IntegrationTests
+[xUnit.net 00:00:04.06]   Starting:    Vasis.MDFe.Api.IntegrationTests
+  Aprovado ObterICMSBasico_ICMS10_Teste (RegimeNormal,OmNacionalConteudoImportacaoInferiorIgual40,DbiMargemValorAgregado,100,18,18,0,0,0,DbisListaNegativa,15,2,1000,18,25,0,0,0) [< 1 ms]
+  Aprovado ObterICMSBasico_CSOSN101_Teste (SimplesNacional,OmEstrangeiraAdquiridaBrasil,100,18) [2 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacional,1000,18,180) [2 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoSuperior70,103,18,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacional,1000,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoSuperior70,103,18,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacional,1000,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+[xUnit.net 00:00:05.56]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Aprovado [xUnit.net 00:00:05.56]       Stack Trace:
+DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+  Aprovado [xUnit.net 00:00:05.56]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+[xUnit.net 00:00:05.56]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+  Aprovado DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+  Aprovado [xUnit.net 00:00:05.56]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+DadoCST61QuandoObterICMSEntaoICMSDeveConterCamposDeTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoSuperior70,103,18,15) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacional,1000,18,180) [< 1 ms]
+[xUnit.net 00:00:05.56]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.56]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:05.56]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.56]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+  Aprovado [xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:05.56]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:05.56]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.56]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(13,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.56]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:05.58]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+[xUnit.net 00:00:05.58]       Stack Trace:
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+[xUnit.net 00:00:05.58]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+[xUnit.net 00:00:05.58]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.58]            at InvokeStub_Program.<Main>$(Object, Span`1)
+[xUnit.net 00:00:05.58]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.58]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.58]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:05.58]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:05.58]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.58]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs(12,0): at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.58]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.58]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Aprovado [xUnit.net 00:00:05.61]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]       Stack Trace:
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.23)
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (RegimeNormal,OmNacionalConteudoImportacaoSuperior70,103,18,15) [1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacional,1000,18,180) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacional,OmNacionalConteudoImportacaoSuperior70,103,18,15) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at InvokeStub_Program.<Main>$(Object, Span`1)
+Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithNullRequest_ShouldHandleGracefully [2 s]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacional,1000,18,180) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraImportacaoDireta,1001,180,18) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraAdquiridaBrasil,1000,180,10) [< 1 ms]
+[xUnit.net 00:00:05.61]         --- End of stack trace from previous location ---
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoSuperior40,1200,18,180) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalProcessosBasicos,1100,18,180) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoInferiorIgual40,1010,12,10) [< 1 ms]
+  Aprovado DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraImportacaoDiretaSemSimilar,101,17,11) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+     Warning:
+  Aprovado      The component "Fluent Assertions" is governed by the rules defined in the Xceed License Agreement and
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmEstrangeiraAdquiridaBrasilSemSimilar,105,19,15) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+     the Xceed Fluent Assertions Community License. You may use Fluent Assertions free of charge for
+  Aprovado      non-commercial use only. An active subscription is required to use Fluent Assertions for commercial use.
+DadoCST61QuandoObterIcmsEntaoIcmsNaoDeveTerCamposQueNaoSejamDaTributacaoMonofasicaSobreCombustiveisPreenchidos (SimplesNacionalExcessoSublimite,OmNacionalConteudoImportacaoSuperior70,103,18,15) [< 1 ms]
+     Please contact Xceed Sales mailto:sales@xceed.com to acquire a subscription at a very low cost.
+  Aprovado [xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+     A paid commercial license supports the development and continued increasing support of
+DadoCST61QuandoGerarICMSEntaoICMSDeveSerDoTipoICMS61ENenhumOutro (SimplesNacional) [< 1 ms]
+     Fluent Assertions users under both commercial and community licenses. Help us
+  Aprovado      keep Fluent Assertions at the forefront of unit testing.
+DadoCST61QuandoGerarICMSEntaoICMSDeveSerDoTipoICMS61ENenhumOutro (SimplesNacionalExcessoSublimite) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+  Aprovado      For more information, visit https://xceed.com/products/unit-testing/fluent-assertions/
+DadoCST61QuandoGerarICMSEntaoICMSDeveSerDoTipoICMS61ENenhumOutro (RegimeNormal) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:06.86]   Finished:    Vasis.MDFe.Api.UnitTests
+  Aprovado ObterIPIBasico_IPITrib_Teste (ipi00,1000,1,10,5,50) [3 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+ObterIPIBasico_IPITrib_Teste (ipi49,1000,1,10,5,50) [< 1 ms]
+  Aprovado ObterIPIBasico_IPITrib_Teste (ipi50,1000,1,10,5,50) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+  Aprovado ObterIPIBasico_IPITrib_Teste (ipi99,1000,1,10,5,50) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+  Aprovado Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithValidCredentials_ShouldReturnOkWithToken [320 ms]
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi01) [< 1 ms]
+  Aprovado Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithEmptyCredentials_ShouldReturnUnauthorized(username: "admin", password: "") [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+  Aprovado Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithEmptyCredentials_ShouldReturnUnauthorized(username: "", password: "") [< 1 ms]
+ObterIPIBasico_IPINT_Teste (ipi02) [< 1 ms]
+  Aprovado Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithEmptyCredentials_ShouldReturnUnauthorized(username: "", password: "senhaforte123") [< 1 ms]
+  Aprovado Vasis.MDFe.Api.UnitTests.AuthControllerTests.Login_WithInvalidCredentials_ShouldReturnUnauthorized [< 1 ms]
+
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi03) [< 1 ms]
+[xUnit.net 00:00:05.61]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+Execução de Teste Bem-sucedida.
+Total de testes: 6
+     Aprovados: 6
+  Aprovado Tempo total: 10,0917 Segundos
+ObterIPIBasico_IPINT_Teste (ipi04) [< 1 ms]
+[xUnit.net 00:00:05.61]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs(12,0): at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory)
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi05) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+ObterIPIBasico_IPINT_Teste (ipi51) [< 1 ms]
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi52) [< 1 ms]
+[xUnit.net 00:00:05.61]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi53) [< 1 ms]
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi54) [< 1 ms]
+  Aprovado ObterIPIBasico_IPINT_Teste (ipi55) [< 1 ms]
+[xUnit.net 00:00:05.61]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Aprovado ObterPISBasico_PISAliq_Teste (pis01,1000,1,10) [2 ms]
+[xUnit.net 00:00:05.61]       Stack Trace:
+  Aprovado ObterPISBasico_PISAliq_Teste (pis02,1000,1,10) [< 1 ms]
+  Aprovado ObterPISBasico_PISQtde_Teste (pis03,1000,1,10) [1 ms]
+  Aprovado [xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+ObterPISBasico_PISNT_Teste (pis04) [< 1 ms]
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+[xUnit.net 00:00:05.61]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+[xUnit.net 00:00:05.62]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+[xUnit.net 00:00:05.62]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+[xUnit.net 00:00:05.62]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+[xUnit.net 00:00:05.62]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.62]            at InvokeStub_Program.<Main>$(Object, Span`1)
+[xUnit.net 00:00:05.62]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Aprovado [xUnit.net 00:00:05.62]         --- End of stack trace from previous location ---
+ObterPISBasico_PISNT_Teste (pis05) [< 1 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.62]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+  Aprovado [xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+ObterPISBasico_PISNT_Teste (pis06) [< 1 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+  Aprovado [xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+ObterPISBasico_PISNT_Teste (pis07) [< 1 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+  Aprovado ObterPISBasico_PISNT_Teste (pis08) [< 1 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+  Aprovado ObterPISBasico_PISNT_Teste (pis09) [< 1 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+  Aprovado [xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+ObterPISBasico_PISOutr_Teste (pis49,1000,1,10,1000,1) [3 ms]
+[xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+  Aprovado [xUnit.net 00:00:05.62]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+ObterPISBasico_PISOutr_Teste (pis50,1000,1,10,1000,1) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.62]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+ObterPISBasico_PISOutr_Teste (pis51,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.62]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(13,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory)
+  Aprovado ObterPISBasico_PISOutr_Teste (pis52,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.62]            at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+  Aprovado [xUnit.net 00:00:05.62]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+ObterPISBasico_PISOutr_Teste (pis53,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.65]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Aprovado [xUnit.net 00:00:05.65]       Stack Trace:
+[xUnit.net 00:00:05.65]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+ObterPISBasico_PISOutr_Teste (pis54,1000,1,10,1000,1) [< 1 ms]
+  Aprovado [xUnit.net 00:00:05.65]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+ObterPISBasico_PISOutr_Teste (pis55,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.65]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+  Aprovado [xUnit.net 00:00:05.65]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+ObterPISBasico_PISOutr_Teste (pis56,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+ObterPISBasico_PISOutr_Teste (pis60,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+ObterPISBasico_PISOutr_Teste (pis61,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+  Aprovado [xUnit.net 00:00:05.66]            at InvokeStub_Program.<Main>$(Object, Span`1)
+ObterPISBasico_PISOutr_Teste (pis62,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.66]         --- End of stack trace from previous location ---
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.66]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+ObterPISBasico_PISOutr_Teste (pis63,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+ObterPISBasico_PISOutr_Teste (pis64,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+ObterPISBasico_PISOutr_Teste (pis65,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+ObterPISBasico_PISOutr_Teste (pis66,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+  Aprovado [xUnit.net 00:00:05.66]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+ObterPISBasico_PISOutr_Teste (pis67,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.66]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs(12,0): at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory)
+  Aprovado [xUnit.net 00:00:05.66]            at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+ObterPISBasico_PISOutr_Teste (pis70,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Aprovado ObterPISBasico_PISOutr_Teste (pis71,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.66]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+[xUnit.net 00:00:05.67]       Stack Trace:
+  Aprovado [xUnit.net 00:00:05.67]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+ObterPISBasico_PISOutr_Teste (pis72,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+  Aprovado [xUnit.net 00:00:05.67]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+[xUnit.net 00:00:05.67]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+ObterPISBasico_PISOutr_Teste (pis73,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+  Aprovado [xUnit.net 00:00:05.67]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+ObterPISBasico_PISOutr_Teste (pis74,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+[xUnit.net 00:00:05.67]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.67]            at InvokeStub_Program.<Main>$(Object, Span`1)
+[xUnit.net 00:00:05.67]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Aprovado [xUnit.net 00:00:05.67]         --- End of stack trace from previous location ---
+ObterPISBasico_PISOutr_Teste (pis75,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+  Aprovado [xUnit.net 00:00:05.67]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+ObterPISBasico_PISOutr_Teste (pis98,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+  Aprovado ObterPISBasico_PISOutr_Teste (pis99,1000,1,10,1000,1) [< 1 ms]
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:05.67]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:05.67]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.67]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(13,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.67]            at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+[xUnit.net 00:00:05.67]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.71]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+[xUnit.net 00:00:05.71]       Stack Trace:
+[xUnit.net 00:00:05.71]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+[xUnit.net 00:00:05.71]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+[xUnit.net 00:00:05.71]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+[xUnit.net 00:00:05.71]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+[xUnit.net 00:00:05.72]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+[xUnit.net 00:00:05.72]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+[xUnit.net 00:00:05.72]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+[xUnit.net 00:00:05.72]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.72]            at InvokeStub_Program.<Main>$(Object, Span`1)
+[xUnit.net 00:00:05.72]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.72]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.72]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.72]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:05.72]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:05.72]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.72]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs(12,0): at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.72]            at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+[xUnit.net 00:00:05.72]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.72]       System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+[xUnit.net 00:00:05.73]       Stack Trace:
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+[xUnit.net 00:00:05.73]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(25,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config)
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+[xUnit.net 00:00:05.73]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs(118,0): at Program.<Main>$(String[] args)
+[xUnit.net 00:00:05.73]            at InvokeStub_Program.<Main>$(Object, Span`1)
+[xUnit.net 00:00:05.73]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.73]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+[xUnit.net 00:00:05.73]            at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+[xUnit.net 00:00:05.73]            at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+[xUnit.net 00:00:05.73]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs(29,0): at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.73]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(13,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory)
+[xUnit.net 00:00:05.73]            at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+[xUnit.net 00:00:05.73]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:05.74]   Finished:    Vasis.MDFe.Api.IntegrationTests
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldValidateSchemaPath [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 13
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Com falha Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.Login_WithInvalidCredentials_ShouldReturnUnauthorized [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs:line 12
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Com falha Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithoutToken_ShouldReturnUnauthorized [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs:line 12
+   at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldLoadCertificateCorrectly [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 13
+   at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Com falha Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithValidToken_ShouldReturnSuccess [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs:line 12
+   at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ApiResponse_ShouldHaveCorrectContentType [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 13
+   at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Com falha Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.Login_WithValidCredentials_ShouldReturnToken [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs:line 12
+   at InvokeStub_AuthenticationIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.SourceIntegrationHealth_ShouldValidateZeusConfiguration [1 ms]
+  Mensagem de erro:
+   System.IO.FileNotFoundException : The configuration file 'appsettings.Test.json' was not found and is not optional. The expected physical path was 'C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\appsettings.Test.json'.
+  Rastreamento de pilha:
+     at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load(Boolean reload)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.AddSource(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.ConfigurationManager.Microsoft.Extensions.Configuration.IConfigurationBuilder.Add(IConfigurationSource source)
+   at Microsoft.Extensions.Configuration.JsonConfigurationExtensions.AddJsonFile(IConfigurationBuilder builder, String path, Boolean optional)
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase.<>c.<.ctor>b__3_1(WebHostBuilderContext context, IConfigurationBuilder config) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 25
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.HostBuilderAdapter.ApplyChanges()
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\Program.cs:line 118
+   at InvokeStub_Program.<Main>$(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+--- End of stack trace from previous location ---
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.CreateHost()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.<>c__DisplayClass10_0.<ResolveHostFactory>b__0(String[] args)
+   at Microsoft.AspNetCore.Mvc.Testing.DeferredHostBuilder.Build()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.DelegatedWebApplicationFactory.CreateHost(IHostBuilder builder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.ConfigureHostBuilder(IHostBuilder hostBuilder)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.EnsureServer()
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateDefaultClient(Uri baseAddress, DelegatingHandler[] handlers)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient(WebApplicationFactoryClientOptions options)
+   at Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactory`1.CreateClient()
+   at Vasis.MDFe.Api.IntegrationTests.IntegrationTestBase..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\IntegrationTestBase.cs:line 29
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests..ctor(WebApplicationFactory`1 factory) in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 13
+   at InvokeStub_ZeusIntegrationTests..ctor(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+
+Total de testes: 8
+     Com falha: 8
+Tempo total: 10,0255 Segundos
+[xUnit.net 00:00:01.70]   Discovering: Vasis.MDFe.Api.RegressionTests
+[xUnit.net 00:00:01.76]   Discovered:  Vasis.MDFe.Api.RegressionTests
+[xUnit.net 00:00:01.76]   Starting:    Vasis.MDFe.Api.RegressionTests
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+  Aprovado Vasis.MDFe.Api.RegressionTests.CriticalPathRegressionTests.CriticalPath_ApiHealth_ShouldAlwaysBeAvailable [1 s]
+info: Vasis.MDFe.Api.Controllers.AuthController[0]
+      Login bem-sucedido para o usu�rio: admin. Token gerado.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      Iniciando teste de integra��o com o c�digo fonte do Zeus DFe.NET (MDF-e).
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      MDFeConfiguracao.Instancia configurada: Ambiente=Homologacao, Layout=Versao300, UF=GO.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      ConfiguracaoCertificado atribu�da. Caminho: C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\cert\certificadoA1.pfx.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      Certificado digital carregado com sucesso (teste de valida��o de path/senha). Subject: CN=CAZARI E GIANI LTDA:14637269000198, OU=AC SyngularID Multipla, OU=41346137000180, OU=Videoconferencia, OU=Certificado Digital PJ A1, O=ICP-Brasil, C=BR.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      ServicoMDFeStatusServico instanciado com sucesso do c�digo fonte Zeus.
+info: Vasis.MDFe.Api.Controllers.AuthController[0]
+      Login bem-sucedido para o usu�rio: admin. Token gerado.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      Iniciando teste de integra��o com o c�digo fonte do Zeus DFe.NET (MDF-e).
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      MDFeConfiguracao.Instancia configurada: Ambiente=Homologacao, Layout=Versao300, UF=GO.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      ConfiguracaoCertificado atribu�da. Caminho: C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\cert\certificadoA1.pfx.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      Certificado digital carregado com sucesso (teste de valida��o de path/senha). Subject: CN=CAZARI E GIANI LTDA:14637269000198, OU=AC SyngularID Multipla, OU=41346137000180, OU=Videoconferencia, OU=Certificado Digital PJ A1, O=ICP-Brasil, C=BR.
+info: Vasis.MDFe.Api.Controllers.MdfeServiceController[0]
+      ServicoMDFeStatusServico instanciado com sucesso do c�digo fonte Zeus.
+[xUnit.net 00:00:05.24]   Finished:    Vasis.MDFe.Api.RegressionTests
+  Aprovado Vasis.MDFe.Api.RegressionTests.CriticalPathRegressionTests.CriticalPath_ZeusIntegration_ShouldBeStable [1 s]
+  Aprovado Vasis.MDFe.Api.RegressionTests.CriticalPathRegressionTests.CriticalPath_CompleteAuthenticationFlow_ShouldWork [80 ms]
+
+Execução de Teste Bem-sucedida.
+Total de testes: 3
+     Aprovados: 3
+Tempo total: 7,9840 Segundos
+  Aprovado NFeConfiguracaoServico_WhenTryCallAsynchronously_ReturnsCorrectStateDistinctNumbers [12 s]
+  Aprovado NFeConfiguracaoServico_WhenTryCallAsynchronously_ReturnsWrongStateDistinctNumbers [12 s]
+
+Execução de Teste Bem-sucedida.
+Total de testes: 168
+     Aprovados: 168
+Tempo total: 30,2742 Segundos
