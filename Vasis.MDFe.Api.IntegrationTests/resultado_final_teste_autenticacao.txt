@@ -1,0 +1,385 @@
+  Determinando os projetos a serem restaurados...
+  Todos os projetos est├úo atualizados para restaura├º├úo.
+  DFe.Classes -> C:\Zeus\1935\DFe.NET-2026\DFe.Classes\bin\Debug\net6.0\DFe.Classes.dll
+  DFe.Utils -> C:\Zeus\1935\DFe.NET-2026\DFe.Utils\bin\Debug\net6.0\DFe.Utils.dll
+  DFe.Wsdl -> C:\Zeus\1935\DFe.NET-2026\DFe.Wsdl\bin\Debug\net6.0\DFe.Wsdl.dll
+  NFe.Classes -> C:\Zeus\1935\DFe.NET-2026\NFe.Classes\bin\Debug\net6.0\NFe.Classes.dll
+  NFe.Utils -> C:\Zeus\1935\DFe.NET-2026\NFe.Utils\bin\Debug\net6.0\NFe.Utils.dll
+  MDFe.Utils -> C:\Zeus\1935\DFe.NET-2026\MDFe.Utils\bin\Debug\net6.0\MDFe.Utils.dll
+  MDFe.Classes -> C:\Zeus\1935\DFe.NET-2026\MDFe.Classes\bin\Debug\net6.0\MDFe.Classes.dll
+  MDFe.Wsdl -> C:\Zeus\1935\DFe.NET-2026\MDFe.Wsdl\bin\Debug\net6.0\MDFe.Wsdl.dll
+  MDFe.Servicos -> C:\Zeus\1935\DFe.NET-2026\MDFe.Servicos\bin\Debug\net6.0\MDFe.Servicos.dll
+  Vasis.MDFe.Api -> C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api\bin\Debug\net8.0\Vasis.MDFe.Api.dll
+  Vasis.MDFe.Api.IntegrationTests -> C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\bin\Debug\net8.0\Vasis.MDFe.Api.IntegrationTests.dll
+Execu├º├úo de teste para C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\bin\Debug\net8.0\Vasis.MDFe.Api.IntegrationTests.dll (.NETCoreApp,Version=v8.0)
+Vers├úo do VSTest 18.0.1 (x64)
+
+Iniciando execu├º├úo de teste, espere...
+1 arquivos de teste no total corresponderam ao padr├úo especificado.
+C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\bin\Debug\net8.0\Vasis.MDFe.Api.IntegrationTests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.5.3.1+6b60a9e56a (64-bit .NET 8.0.23)
+[xUnit.net 00:00:02.95]   Discovering: Vasis.MDFe.Api.IntegrationTests
+[xUnit.net 00:00:03.12]   Discovered:  Vasis.MDFe.Api.IntegrationTests
+[xUnit.net 00:00:03.14]   Starting:    Vasis.MDFe.Api.IntegrationTests
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: JwtBearerEvents[0]
+      --- JWT Authentication Failed ---. Raz´┐¢o: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+fail: JwtBearerEvents[0]
+      Falha na valida´┐¢´┐¢o do token: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: invalid_token, Descri´┐¢´┐¢o: The signature key was not found. Detalhes da Falha: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+fail: JwtBearerEvents[0]
+      Exce´┐¢´┐¢o no desafio de autentica´┐¢´┐¢o JWT.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+warn: Vasis.MDFe.Api.Controllers.AuthController[0]
+      Tentativa de login falha para o usu´┐¢rio: admin
+  Aprovado Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.Login_WithInvalidCredentials_ShouldReturnUnauthorized [3 s]
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: (null), Descri´┐¢´┐¢o: (null). Detalhes da Falha: (null)
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: JwtBearerEvents[0]
+      --- JWT Authentication Failed ---. Raz´┐¢o: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+fail: JwtBearerEvents[0]
+      Falha na valida´┐¢´┐¢o do token: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: invalid_token, Descri´┐¢´┐¢o: The signature key was not found. Detalhes da Falha: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+fail: JwtBearerEvents[0]
+      Exce´┐¢´┐¢o no desafio de autentica´┐¢´┐¢o JWT.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+  Aprovado Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithoutToken_ShouldReturnUnauthorized [421 ms]
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: JwtBearerEvents[0]
+      --- JWT Authentication Failed ---. Raz´┐¢o: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+fail: JwtBearerEvents[0]
+      Falha na valida´┐¢´┐¢o do token: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: invalid_token, Descri´┐¢´┐¢o: The signature key was not found. Detalhes da Falha: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+fail: JwtBearerEvents[0]
+      Exce´┐¢´┐¢o no desafio de autentica´┐¢´┐¢o JWT.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Vasis.MDFe.Api.Controllers.AuthController[0]
+      Login bem-sucedido para o usu´┐¢rio: admin. Token gerado.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: JwtBearerEvents[0]
+      --- JWT Authentication Failed ---. Raz´┐¢o: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+fail: JwtBearerEvents[0]
+      Falha na valida´┐¢´┐¢o do token: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: invalid_token, Descri´┐¢´┐¢o: The signature key was not found. Detalhes da Falha: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+fail: JwtBearerEvents[0]
+      Exce´┐¢´┐¢o no desafio de autentica´┐¢´┐¢o JWT.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[xUnit.net 00:00:15.88]     Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithValidToken_ShouldReturnSuccess [FAIL]
+[xUnit.net 00:00:15.89]       Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+[xUnit.net 00:00:15.89]       Stack Trace:
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:15.89]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:15.89]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs(75,0): at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithValidToken_ShouldReturnSuccess()
+[xUnit.net 00:00:15.89]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:15.90]     Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldValidateSchemaPath [FAIL]
+[xUnit.net 00:00:15.91]       Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+[xUnit.net 00:00:15.91]       Stack Trace:
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:15.91]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(61,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldValidateSchemaPath()
+[xUnit.net 00:00:15.91]         --- End of stack trace from previous location ---
+  Com falha Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithValidToken_ShouldReturnSuccess [7 s]
+  Mensagem de erro:
+   Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+  Rastreamento de pilha:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+   at Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.ProtectedEndpoint_WithValidToken_ShouldReturnSuccess() in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs:line 75
+--- End of stack trace from previous location ---
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldValidateSchemaPath [10 s]
+  Mensagem de erro:
+   Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+  Rastreamento de pilha:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldValidateSchemaPath() in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 61
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:15.91]     Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldLoadCertificateCorrectly [FAIL]
+[xUnit.net 00:00:15.91]       Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+[xUnit.net 00:00:15.91]       Stack Trace:
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:15.91]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(46,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldLoadCertificateCorrectly()
+[xUnit.net 00:00:15.91]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:15.91]     Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ApiResponse_ShouldHaveCorrectContentType [FAIL]
+[xUnit.net 00:00:15.91]       Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+[xUnit.net 00:00:15.91]       Stack Trace:
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:15.91]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:15.91]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(80,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ApiResponse_ShouldHaveCorrectContentType()
+[xUnit.net 00:00:15.91]         --- End of stack trace from previous location ---
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+fail: JwtBearerEvents[0]
+      --- JWT Authentication Failed ---. Raz´┐¢o: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+fail: JwtBearerEvents[0]
+      Falha na valida´┐¢´┐¢o do token: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+warn: JwtBearerEvents[0]
+      --- JWT Challenge Triggered ---. Motivo: invalid_token, Descri´┐¢´┐¢o: The signature key was not found. Detalhes da Falha: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+fail: JwtBearerEvents[0]
+      Exce´┐¢´┐¢o no desafio de autentica´┐¢´┐¢o JWT.
+      Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10517: Signature validation failed. The token's kid is missing. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, KeyId: '', InternalId: 'TFwB-fupsIOZnb1uD_3bdddSb5UDRfQpmZ5jZlGWdkg'. , KeyId: \r\n'.
+Number of keys in TokenValidationParameters: '1'. 
+Number of keys in Configuration: '0'.
+Exceptions caught:
+ '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII of type 'Microsoft.IdentityModel.JsonWebTokens.JsonWebToken' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'. See https://aka.ms/IDX10503 for details.
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignature(JsonWebToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateSignatureAndIssuerSecurityKey(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+         at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+[xUnit.net 00:00:15.97]     Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.SourceIntegrationHealth_ShouldValidateZeusConfiguration [FAIL]
+[xUnit.net 00:00:15.98]       Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+[xUnit.net 00:00:15.98]       Stack Trace:
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+[xUnit.net 00:00:15.98]            at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+[xUnit.net 00:00:15.98]         C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs(26,0): at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.SourceIntegrationHealth_ShouldValidateZeusConfiguration()
+[xUnit.net 00:00:15.98]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:15.99]   Finished:    Vasis.MDFe.Api.IntegrationTests
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldLoadCertificateCorrectly [562 ms]
+  Mensagem de erro:
+   Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+  Rastreamento de pilha:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ZeusConfiguration_ShouldLoadCertificateCorrectly() in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 46
+--- End of stack trace from previous location ---
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ApiResponse_ShouldHaveCorrectContentType [42 ms]
+  Mensagem de erro:
+   Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+  Rastreamento de pilha:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.ApiResponse_ShouldHaveCorrectContentType() in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 80
+--- End of stack trace from previous location ---
+  Aprovado Vasis.MDFe.Api.IntegrationTests.AuthenticationIntegrationTests.Login_WithValidCredentials_ShouldReturnToken [918 ms]
+  Com falha Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.SourceIntegrationHealth_ShouldValidateZeusConfiguration [372 ms]
+  Mensagem de erro:
+   Expected response.StatusCode to be HttpStatusCode.OK {value: 200}, but found HttpStatusCode.Unauthorized {value: 401}.
+  Rastreamento de pilha:
+     at FluentAssertions.Execution.XUnit2TestFramework.Throw(String message)
+   at FluentAssertions.Execution.TestFrameworkProvider.Throw(String message)
+   at FluentAssertions.Execution.DefaultAssertionStrategy.HandleFailure(String message)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(Func`1 failReasonFunc)
+   at FluentAssertions.Execution.AssertionScope.FailWith(String message, Object[] args)
+   at FluentAssertions.Primitives.EnumAssertions`2.Be(TEnum expected, String because, Object[] becauseArgs)
+   at Vasis.MDFe.Api.IntegrationTests.ZeusIntegrationTests.SourceIntegrationHealth_ShouldValidateZeusConfiguration() in C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs:line 26
+--- End of stack trace from previous location ---
+
+Falha na Execu├º├úo de Teste.
+Total de testes: 8
+     Aprovados: 3
+     Com falha: 5
+Tempo total: 22,2523 Segundos
