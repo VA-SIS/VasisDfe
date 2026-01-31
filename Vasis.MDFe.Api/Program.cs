@@ -5,10 +5,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer; // <<<--- GARANTIDO ESTAR AQUI
-using Microsoft.OpenApi.Models; // Necessário para OpenApiSecurityScheme e OpenApiSecurityRequirement
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
 using System;
-using Microsoft.Extensions.Logging; // Opcional, mas útil se AddLogging for usado explicitamente
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,7 +53,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// *** ADIÇÃO: Configuração CORS para resolver "Failed to fetch" ***
+// Configuração CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSwaggerUI", policy =>
@@ -64,7 +64,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Configuração do logger para injeção de dependência (usado em controllers ou outros serviços)
+// Configuração do logger
 builder.Services.AddLogging();
 
 // --- INÍCIO DA CONFIGURAÇÃO JWT PARA .NET 8.0 ---
@@ -72,8 +72,6 @@ var jwtKey = builder.Configuration["Jwt:Key"];
 var jwtIssuer = builder.Configuration["Jwt:Issuer"];
 var jwtAudience = builder.Configuration["Jwt:Audience"];
 
-// Valida se as configurações JWT foram carregadas, CRÍTICO para segurança e estabilidade.
-// Se faltar, a aplicação não inicia, evitando débitos técnicos de segurança.
 if (string.IsNullOrEmpty(jwtKey))
 {
     throw new InvalidOperationException("Configuração 'Jwt:Key' ausente. Verifique seu secrets.json ou variáveis de ambiente.");
@@ -105,6 +103,42 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = jwtAudience,
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
     };
+
+    // Eventos de Logging Detalhado do JWT
+    options.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = context =>
+        {
+            var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+            logger.LogError(context.Exception, "--- JWT Authentication Failed ---. Razão: {message}", context.Exception?.Message);
+            if (context.Exception is SecurityTokenExpiredException)
+            {
+                logger.LogError("Token expirado: {Expires}", context.Exception.Message);
+            }
+            else if (context.Exception is SecurityTokenValidationException)
+            {
+                logger.LogError("Falha na validação do token: {Details}", context.Exception.Message);
+            }
+            return Task.CompletedTask;
+        },
+        OnTokenValidated = context =>
+        {
+            var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+            logger.LogInformation("--- JWT Token Validated Successfully --- para o usuário: {username}", context.Principal?.Identity?.Name);
+            return Task.CompletedTask;
+        },
+        OnChallenge = context =>
+        {
+            var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+            logger.LogWarning("--- JWT Challenge Triggered ---. Motivo: {error}, Descrição: {description}. Detalhes da Falha: {details}",
+                              context.Error, context.ErrorDescription, context.AuthenticateFailure?.Message);
+            if (context.AuthenticateFailure != null)
+            {
+                logger.LogError(context.AuthenticateFailure, "Exceção no desafio de autenticação JWT.");
+            }
+            return Task.CompletedTask;
+        }
+    };
 });
 
 // Adiciona os serviços de autorização
@@ -118,28 +152,33 @@ builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // ===================================================================================
-// INÍCIO: Configuração do Pipeline de Requisições HTTP - ORDEM CORRIGIDA
+// INÍCIO: Configuração do Pipeline de Requisições HTTP - ORDEM CORRETA
 // ===================================================================================
 
-// Configurações para ambiente de Desenvolvimento
-if (app.Environment.IsDevelopment())
+// Configurações para ambiente de Desenvolvimento E TESTE
+if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Testing")
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API V1");
     });
 }
+else
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
 
-// Redirecionamento HTTPS (boa prática de segurança)
+// Redirecionamento HTTPS
 app.UseHttpsRedirection();
 
 // --- ORDEM CORRETA DOS MIDDLEWARES JWT ---
-// CRÍTICO: UseAuthentication DEVE VIR ANTES de UseAuthorization
-// CRÍTICO: CORS deve vir APÓS a autenticação para não interferir
-app.UseAuthentication();        // 1º - Identifica usuário via token JWT
-app.UseAuthorization();         // 2º - Verifica permissões do usuário identificado
-app.UseCors("AllowSwaggerUI");  // 3º - CORS após autenticação (CORREÇÃO APLICADA)
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.UseCors("AllowSwaggerUI");
 
 // Mapeia os controllers da aplicação
 app.MapControllers();
@@ -149,4 +188,4 @@ app.Run();
 // FIM: Configuração do Pipeline de Requisições HTTP
 // ===================================================================================
 
-public partial class Program { } // ADICIONE ESTA LINHA AQUI
+public partial class Program { }
