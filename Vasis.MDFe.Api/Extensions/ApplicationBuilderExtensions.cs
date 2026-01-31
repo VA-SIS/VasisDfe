@@ -1,16 +1,19 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting; // Para IWebHostEnvironment (IsDevelopment)
 
 namespace Vasis.MDFe.Api.Extensions
 {
     public static class ApplicationBuilderExtensions
     {
-        public static IApplicationBuilder UseCustomPipeline(this IApplicationBuilder app, IWebHostEnvironment env)
+        public static IApplicationBuilder ConfigureRequestPipeline(this WebApplication app)
         {
-            // Usar Swagger em desenvolvimento
-            app.UseCustomSwagger(env);
+            // O UseCustomSwagger já verifica o ambiente.
+            // Aqui chamamos apenas a parte que configura a interface do Swagger.
+            app.UseCustomSwagger(app.Environment);
 
-            if (env.IsDevelopment())
+            // Configurações para ambiente de Desenvolvimento E TESTE (se não for tratada no Swagger)
+            if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Testing")
             {
                 app.UseDeveloperExceptionPage();
             }
@@ -20,22 +23,17 @@ namespace Vasis.MDFe.Api.Extensions
                 app.UseHsts();
             }
 
-            // Middleware de logging de requisições
-            app.Use(async (context, next) =>
-            {
-                var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
-                logger.LogDebug("Request: {Method} {Path}", context.Request.Method, context.Request.Path);
-                await next();
-                logger.LogDebug("Response: {StatusCode}", context.Response.StatusCode);
-            });
-
+            // Redirecionamento HTTPS
             app.UseHttpsRedirection();
-            app.UseRouting();
-            app.UseCors("AllowAll");
 
-            // Ordem crítica: Authentication antes de Authorization
+            // --- ORDEM CORRETA DOS MIDDLEWARES JWT ---
+            app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors("AllowSwaggerUI"); // Usa o nome da política definida em ServiceCollectionExtensions
+
+            // Mapeia os controllers da aplicação
+            app.MapControllers();
 
             return app;
         }

@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System.Text;
-using Vasis.MDFe.Api.Settings; // Certifique-se que o namespace está correto
-using System.IdentityModel.Tokens.Jwt; // Para JwtRegisteredClaimNames
-using Microsoft.Extensions.Options; // Para usar IOptions
+using System.IdentityModel.Tokens.Jwt; // Necessário para SecurityTokenExpiredException
 
 namespace Vasis.MDFe.Api.Extensions
 {
@@ -11,71 +12,79 @@ namespace Vasis.MDFe.Api.Extensions
     {
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            var jwtSettings = new JwtSettings();
-            configuration.GetSection("Jwt").Bind(jwtSettings);
+            var jwtKey = configuration["Jwt:Key"];
+            var jwtIssuer = configuration["Jwt:Issuer"];
+            var jwtAudience = configuration["Jwt:Audience"];
 
-            if (string.IsNullOrEmpty(jwtSettings.Key) || string.IsNullOrEmpty(jwtSettings.Issuer) || string.IsNullOrEmpty(jwtSettings.Audience))
+            if (string.IsNullOrEmpty(jwtKey))
             {
-                throw new InvalidOperationException("JWT configuration is missing. Please check Jwt:Key, Jwt:Issuer, and Jwt:Audience in appsettings.json");
+                throw new InvalidOperationException("Configuração 'Jwt:Key' ausente. Verifique seu secrets.json ou variáveis de ambiente.");
             }
-
-            var key = Encoding.UTF8.GetBytes(jwtSettings.Key);
+            if (string.IsNullOrEmpty(jwtIssuer))
+            {
+                throw new InvalidOperationException("Configuração 'Jwt:Issuer' ausente. Verifique seu secrets.json ou variáveis de ambiente.");
+            }
+            if (string.IsNullOrEmpty(jwtAudience))
+            {
+                throw new InvalidOperationException("Configuração 'Jwt:Audience' ausente. Verifique seu secrets.json ou variáveis de ambiente.");
+            }
 
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(options =>
             {
-                options.SaveToken = true;
-                options.RequireHttpsMetadata = false; // Apenas para desenvolvimento; em produção, use true
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings.Issuer,
-                    ValidAudience = jwtSettings.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ClockSkew = TimeSpan.Zero,
-                    RequireSignedTokens = true,
-                    RequireExpirationTime = true,
-                    RequireAudience = true,
-                    ConfigurationManager = null, // 🔥 CORREÇÃO PARA IDX10517
-                    RequireKeyIdentifier = false  // 🔥 CORREÇÃO PARA IDX10517
+                    ValidIssuer = jwtIssuer,
+                    ValidAudience = jwtAudience,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
                 };
 
+                // Eventos de Logging Detalhado do JWT
                 options.Events = new JwtBearerEvents
                 {
                     OnAuthenticationFailed = context =>
                     {
-                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<JwtBearerHandler>>();
-                        logger.LogError(context.Exception, "Authentication failed: {Error}", context.Exception.Message);
+                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+                        logger.LogError(context.Exception, "--- JWT Authentication Failed ---. Razão: {message}", context.Exception?.Message);
+                        if (context.Exception is SecurityTokenExpiredException)
+                        {
+                            logger.LogError("Token expirado: {Expires}", context.Exception.Message);
+                        }
+                        else if (context.Exception is SecurityTokenValidationException)
+                        {
+                            logger.LogError("Falha na validação do token: {Details}", context.Exception.Message);
+                        }
                         return Task.CompletedTask;
                     },
                     OnTokenValidated = context =>
                     {
-                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<JwtBearerHandler>>();
-                        logger.LogDebug("Token validated for user: {User}", context.Principal?.Identity?.Name ?? "Unknown");
+                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+                        logger.LogInformation("--- JWT Token Validated Successfully --- para o usuário: {username}", context.Principal?.Identity?.Name);
                         return Task.CompletedTask;
                     },
                     OnChallenge = context =>
                     {
-                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<JwtBearerHandler>>();
-                        logger.LogWarning("JWT Challenge: {Error} - {ErrorDescription}", context.Error, context.ErrorDescription);
+                        var logger = context.HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(nameof(JwtBearerEvents));
+                        logger.LogWarning("--- JWT Challenge Triggered ---. Motivo: {error}, Descrição: {description}. Detalhes da Falha: {details}",
+                                          context.Error, context.ErrorDescription, context.AuthenticateFailure?.Message);
+                        if (context.AuthenticateFailure != null)
+                        {
+                            logger.LogError(context.AuthenticateFailure, "Exceção no desafio de autenticação JWT.");
+                        }
                         return Task.CompletedTask;
                     }
                 };
             });
 
-            services.AddAuthorization(); // Adiciona serviços de autorização junto com a autenticação
-
-            // Registra JwtSettings para injeção de dependência se ainda não estiver feito
-            services.Configure<JwtSettings>(configuration.GetSection("Jwt"));
-
+            services.AddAuthorization(); // Adiciona os serviços de autorização
             return services;
         }
     }

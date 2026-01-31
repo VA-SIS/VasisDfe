@@ -1,4 +1,8 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Builder; // Para IApplicationBuilder
+using Microsoft.AspNetCore.Hosting; // Para IWebHostEnvironment
+using Microsoft.Extensions.Hosting; // Para IWebHostEnvironment (IsDevelopment)
 
 namespace Vasis.MDFe.Api.Extensions
 {
@@ -6,31 +10,23 @@ namespace Vasis.MDFe.Api.Extensions
     {
         public static IServiceCollection AddCustomSwagger(this IServiceCollection services)
         {
-            services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo
-                {
-                    Title = "Vasis MDFe API",
-                    Version = "v1",
-                    Description = "API para emissão e validação de MDFe utilizando DFe.NET",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Vasis Team",
-                        Email = "contato@vasis.com.br"
-                    }
-                });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vasis MDFe API", Version = "v1" });
 
-                // Configuração de autenticação JWT no Swagger
+                // Adiciona o esquema de segurança JWT (Bearer) ao Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: Authorization: Bearer { token } ",
                     Name = "Authorization",
-                    In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
-                    Scheme = "Bearer"
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    // 🔥 Correção de aspas duplas usando literal de string bruto
+                    Description = """Token de autenticação JWT (Bearer Token). Ex: Bearer {token}"""
                 });
 
+                // Garante que o Swagger envie o token JWT para os endpoints protegidos
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
@@ -46,19 +42,17 @@ namespace Vasis.MDFe.Api.Extensions
                     }
                 });
             });
-
             return services;
         }
 
         public static IApplicationBuilder UseCustomSwagger(this IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment() || env.EnvironmentName == "Testing")
             {
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API v1");
-                    c.RoutePrefix = string.Empty; // Swagger na raiz
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API V1");
                 });
             }
             return app;

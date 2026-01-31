@@ -1,46 +1,41 @@
-// Program.cs - VERSÃO MODULARIZADA E LIMPA
-using Vasis.MDFe.Api.Extensions; // Importa os novos métodos de extensão
+// Program.cs - VERSÃO MODULARIZADA E LIMPA (Com Extensions Separadas)
+using Vasis.MDFe.Api.Extensions; // Importa todos os novos métodos de extensão
 
 var builder = WebApplication.CreateBuilder(args);
 
-// -----------------------------------------------------
-// 1. Configuração dos Serviços (builder.Services)
-// -----------------------------------------------------
-builder.Services.AddCustomLogging(builder.Configuration);
-builder.Services.AddCustomControllers();
-builder.Services.AddCustomCors();
-builder.Services.AddCustomSwagger(); // Adiciona serviços do Swagger
-builder.Services.AddCustomHealthChecks();
+// ===================================================================================
+// INÍCIO: Adição e Configuração de Serviços (builder.Services)
+// ===================================================================================
 
-// Autenticação JWT e Autorização (inclui a correção do IDX10517)
+// Adiciona serviços "core" da aplicação (Controllers, EndpointsApiExplorer, Logging)
+builder.Services.AddCoreServices(builder.Configuration);
+
+// Configuração do Swagger/OpenAPI com suporte a JWT
+builder.Services.AddCustomSwagger();
+
+// Configuração CORS
+builder.Services.AddCustomCors();
+
+// Configuração e Adição da Autenticação JWT (incluindo validação de config e eventos)
 builder.Services.AddJwtAuthentication(builder.Configuration);
 
-// Serviços da Aplicação (AuthService, MDFeService, TokenService, IHttpClientFactory, etc.)
-builder.Services.AddApplicationServices(builder.Configuration);
+// ===================================================================================
+// FIM: Adição e Configuração de Serviços
+// ===================================================================================
 
-// -----------------------------------------------------
-// 2. Construção da Aplicação
-// -----------------------------------------------------
 var app = builder.Build();
 
-// -----------------------------------------------------
-// 3. Configuração do Pipeline de Requisições (app.Use)
-// -----------------------------------------------------
-app.UseCustomPipeline(app.Environment); // Inclui Swagger, tratamento de erros, log de requisições, HTTPS, Routing, CORS, Auth, Authz
+// ===================================================================================
+// INÍCIO: Configuração do Pipeline de Requisições HTTP (app.Use)
+// ===================================================================================
 
-app.MapControllers();
-app.MapHealthChecks("/health");
+// Configura o pipeline da aplicação
+app.ConfigureRequestPipeline();
 
-// Endpoint de teste básico
-app.MapGet("/", () => new
-{
-    Service = "Vasis MDFe API",
-    Version = "1.0.0",
-    Status = "Running",
-    Timestamp = DateTime.UtcNow
-});
+// ===================================================================================
+// FIM: Configuração do Pipeline de Requisições HTTP
+// ===================================================================================
 
 app.Run();
 
-// Necessário para testes de integração
 public partial class Program { }
