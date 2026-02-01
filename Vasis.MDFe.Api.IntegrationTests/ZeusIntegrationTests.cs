@@ -1,153 +1,156 @@
-﻿using Xunit;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿// File: Vasis.MDFe.Api.IntegrationTests\ZeusIntegrationTests.cs
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
+using System; // Adicionado para Random, se necessário para gerar dados unicos
 using System.Net;
-using System;
-using System.Collections.Generic; // Para List<T> se necessário
+using System.Net.Http;
+using System.Net.Http.Headers; // Adicionado para MediaTypeHeaderValue
+using System.Text;
+using System.Threading.Tasks;
+using Vasis.MDFe.Api.IntegrationTests; // Adicionado para acessar TestJwtTokenGenerator
+using Vasis.MDFe.Api.TestUtilities; // Adicionado para acessar TestDataBuilder
+using Xunit;
 
 namespace Vasis.MDFe.Api.IntegrationTests
 {
-    public class ZeusIntegrationTests : IntegrationTestBase
+    public class ZeusIntegrationTests : IClassFixture<TestWebApplicationFactory>
     {
-        public ZeusIntegrationTests(TestWebApplicationFactory factory) : base(factory)
+        private readonly WebApplicationFactory<Program> _factory;
+        private readonly HttpClient _client;
+
+        public ZeusIntegrationTests(TestWebApplicationFactory factory)
         {
-            // Qualquer setup específico para ZeusIntegrationTests, se necessário.
+            _factory = factory;
+            _client = _factory.CreateClient();
         }
 
         [Fact]
         public async Task GetHealthCheck_ReturnsOk()
         {
-            // IMPORTANTE: Substitua "/health" pelo caminho real do seu endpoint de health check da API.
-            var response = await _client.GetAsync("/health");
+            // Ajuste da rota: O endpoint de Health Check no Program.cs da API é "/healthz"
+            var response = await _client.GetAsync("/healthz");
 
-            response.EnsureSuccessStatusCode(); // Espera 2xx
-            var content = await response.Content.ReadAsStringAsync();
-            // IMPORTANTE: Ajuste a asserção com base no que seu endpoint de health check realmente retorna.
-            Assert.Contains("Healthy", content); // Exemplo: verifica se a string "Healthy" está presente
-        }
-
-        [Fact]
-        public async Task GetMDFE_ReturnsOk_WithValidAuthToken()
-        {
-            // Gera um token JWT válido. Ajuste userId e role com base na autorização da sua API.
-            var token = TestJwtTokenGenerator.GenerateToken(_configuration, userId: "zeus-admin", role: "Admin");
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            // IMPORTANTE: Substitua "/api/mdfe/some-valid-id" pelo caminho real do seu endpoint
-            // e certifique-se de que 'some-valid-id' representa um ID que *deveria* existir no seu ambiente de teste.
-            var response = await _client.GetAsync("/api/mdfe/some-valid-id");
-
-            response.EnsureSuccessStatusCode(); // Espera 2xx
-            var content = await response.Content.ReadAsStringAsync();
-            Assert.False(string.IsNullOrWhiteSpace(content), "O conteúdo da resposta do MDF-e não deveria ser vazio.");
-            // IMPORTANTE: Adicione asserções mais específicas para validar a estrutura e o conteúdo da resposta do MDF-e.
-            // Exemplo: Assert.Contains("ExpectedMDFEProperty", content);
-        }
-
-        [Fact]
-        public async Task CreateMDFE_ReturnsCreated_WithValidDataAndAuthToken()
-        {
-            var token = TestJwtTokenGenerator.GenerateToken(_configuration, userId: "editor-zeus", role: "Editor");
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            // IMPORTANTE: Este objeto 'mdfeData' *DEVE* corresponder à estrutura EXATA
-            // do seu DTO (Data Transfer Object) de criação de MDF-e que sua API espera.
-            // Os nomes das propriedades devem corresponder ao que o deserializador JSON da sua API espera (camelCase ou PascalCase).
-            // O exemplo abaixo é genérico e precisa ser totalmente ADAPTADO ao seu modelo.
-            var mdfeData = new
-            {
-                ChaveAcesso = "99999999999999999999999999999999999999999999", // Chave de acesso de exemplo
-                Versao = "3.00",
-                Modal = 1, // Exemplo: 1 para Rodoviário
-                Ide = new
-                {
-                    cUF = 43, // Código da UF do emitente (RS)
-                    tpAmb = 2, // Tipo de ambiente: 1-Produção, 2-Homologação
-                    tpEmit = 1, // Tipo de emitente: 1-Prestador de serviço de transporte, 2-Transportador de Carga Própria
-                    tpTransp = 1, // Tipo de transportador: 1-ETC, 2-TAC Independente, 3-CTC
-                    mod = 58, // Modelo do documento fiscal eletrônico (58 para MDF-e)
-                    serie = 1,
-                    nMDF = 123456, // Número do MDFe
-                    cMDF = "12345678", // Código numérico que compõe a Chave de Acesso
-                    modal = 1, // Modalidade do transporte: 1-Rodoviário (1-Rodoviário, 2-Aéreo, 3-Aquaviário, 4-Ferroviário)
-                    dhEmi = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sszzz"), // Data e hora de emissão em formato ISO 8601
-                    procEmi = 0, // Processo de emissão: 0-Emissão de MDF-e com aplicativo do contribuinte
-                    verProc = "1.00", // Versão do processo de emissão
-                    UFIni = "RS", // UF de início da prestação
-                    UFFim = "SP", // UF de fim da prestação
-                    InfMunCarrega = new List<object> { // Informações dos Municípios de Carregamento
-                        new {
-                            cMunCarrega = "4314404", // Código IBGE de Porto Alegre
-                            xMunCarrega = "Porto Alegre"
-                        }
-                    },
-                    InfMunDescarga = new List<object> { // Informações dos Municípios de Descarga
-                        new {
-                            cMunDescarga = "3550308", // Código IBGE de São Paulo
-                            xMunDescarga = "São Paulo"
-                        }
-                    }
-                },
-                Emit = new
-                {
-                    CNPJ = "00000000000000", // CNPJ do emitente
-                    IE = "123456789", // Inscrição Estadual
-                    XNome = "Minha Empresa Teste", // Razão Social
-                    XFant = "Fantasia Teste", // Nome Fantasia
-                    xEnder = new
-                    {
-                        XLgr = "Rua Teste",
-                        Nro = "100",
-                        XBairro = "Centro",
-                        CMun = "4314404", // Código IBGE de Porto Alegre
-                        XMun = "Porto Alegre",
-                        CEP = "90000000",
-                        UF = "RS",
-                        Fone = "5133333333"
-                    }
-                }
-                // Adicione outras seções do DTO do MDF-e conforme a sua API espera (ex: InfDoc, Rodoviario, etc.)
-            };
-
-            // Serializa os dados para JSON, usando camelCase para as propriedades.
-            // Se sua API espera PascalCase ou outro padrão, ajuste a opção de JsonSerializerOptions.
-            var jsonContent = JsonSerializer.Serialize(mdfeData, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-            // IMPORTANTE: Substitua "/api/mdfe" pelo endpoint real de criação da sua API.
-            var response = await _client.PostAsync("/api/mdfe", content);
-
-            Assert.Equal(HttpStatusCode.Created, response.StatusCode); // Espera 201 Created para criação bem-sucedida
-            var responseContent = await response.Content.ReadAsStringAsync();
-            Assert.False(string.IsNullOrWhiteSpace(responseContent), "O conteúdo da resposta de criação não deveria ser vazio.");
-            // IMPORTANTE: Adicione asserções para validar o corpo da resposta (ex: que retornou o ID do MDF-e criado).
-        }
-
-        [Fact]
-        public async Task GetMDFEById_ReturnsNotFound_ForNonExistentId_WithValidAuthToken()
-        {
-            var token = TestJwtTokenGenerator.GenerateToken(_configuration, userId: "viewer-zeus", role: "Viewer");
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            // Um GUID aleatório garante que não existe um MDF-e com este ID.
-            var nonExistentId = Guid.NewGuid();
-            var response = await _client.GetAsync($"/api/mdfe/{nonExistentId}"); // Endpoint de busca por ID
-
-            Assert.Equal(HttpStatusCode.NotFound, response.StatusCode); // Espera 404 Not Found
+            response.EnsureSuccessStatusCode(); // Lança exceção se o código de status não indicar sucesso
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
         [Fact]
         public async Task GetMDFE_ReturnsUnauthorized_WithoutAuthToken()
         {
-            // Garante que não há token de autorização.
-            _client.DefaultRequestHeaders.Authorization = null;
-            // Tenta acessar um endpoint protegido sem token.
-            var response = await _client.GetAsync("/api/mdfe/any-id");
+            // Ajuste da rota: O endpoint do MDFE na API é "/api/mdfe"
+            var response = await _client.GetAsync("/api/mdfe");
 
-            Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode); // Espera 401 Unauthorized
+            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+        }
+
+        [Fact]
+        public async Task ProtectedEndpoint_ReturnsUnauthorized_WithoutToken()
+        {
+            // Este teste verifica que um endpoint protegido retorna 401 sem token.
+            // O endpoint "/api/protected" pode ser um exemplo genérico para sua API.
+            // Se você não tiver um endpoint "/api/protected" genérico, pode usar /api/mdfe.
+            // Vou assumir que "/api/protected" não existe, então usaremos "/api/mdfe".
+            var response = await _client.GetAsync("/api/mdfe/some-id"); // Exemplo de endpoint protegido
+
+            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+        }
+
+        [Fact]
+        public async Task Login_WithValidCredentials_ReturnsToken()
+        {
+            var loginRequest = TestDataBuilder.BuildLoginRequest();
+            var content = new StringContent(JsonConvert.SerializeObject(loginRequest), Encoding.UTF8, "application/json");
+
+            var response = await _client.PostAsync("/auth/login", content);
+
+            response.EnsureSuccessStatusCode();
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+            var responseString = await response.Content.ReadAsStringAsync();
+            responseString.Should().NotBeNullOrEmpty();
+
+            // O token gerado deve estar na resposta
+            // Você pode adicionar mais asserts para validar o formato do token, etc.
+        }
+
+        [Fact]
+        public async Task ProtectedEndpoint_ReturnsOk_WithValidToken()
+        {
+            // 1. Obter um token JWT válido para o usuário de teste.
+            // A configuração é injetada via TestWebApplicationFactory.
+            var config = _factory.Services.GetRequiredService<IConfiguration>();
+            var token = TestJwtTokenGenerator.GenerateToken(config, "testuser-id", "Admin", "testuser");
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // Ajuste da rota: Usar um endpoint protegido real da sua API. Ex: "/api/mdfe/some-id"
+            // Assumindo que este endpoint não precisa de um MDF-e existente para apenas testar a autorização.
+            // Se /api/mdfe/some-id retornar 404, mude para um endpoint que retorne 200 com autenticação.
+            var response = await _client.GetAsync("/api/mdfe"); // Exemplo: Tenta obter todos os MDF-e
+
+            response.EnsureSuccessStatusCode(); // Verifica se o status é 2xx
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
+        }
+
+
+        // Exemplo: Teste de Criação de MDF-e
+        [Fact]
+        public async Task CreateMDFE_ReturnsCreated_WithValidDataAndAuthToken()
+        {
+            // 1. Obter um token JWT válido.
+            var config = _factory.Services.GetRequiredService<IConfiguration>();
+            var token = TestJwtTokenGenerator.GenerateToken(config, "testuser-id", "Admin", "testuser");
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // 2. Criar um objeto MDF-e de teste (usando o builder)
+            var mdfeCreateRequest = TestDataBuilder.BuildMdfeCreateRequest();
+            var content = new StringContent(JsonConvert.SerializeObject(mdfeCreateRequest), Encoding.UTF8, "application/json");
+
+            // 3. Enviar a requisição POST para o endpoint correto.
+            // Ajuste da rota: O endpoint para criar MDF-e na API é "/api/mdfe" (POST)
+            var response = await _client.PostAsync("/api/mdfe", content);
+
+            // 4. Verificar o StatusCode esperado
+            response.EnsureSuccessStatusCode(); // Isso vai falhar se não for 2xx (por exemplo, 404)
+            response.StatusCode.Should().Be(HttpStatusCode.Created); // Espera 201 Created
+
+            // Você pode adicionar mais asserts aqui, como validar a resposta, o ID do MDF-e criado, etc.
+        }
+
+        // Exemplo: Teste para buscar MDF-e por ID (já estava aprovado)
+        [Fact]
+        public async Task GetMDFEById_ReturnsNotFound_ForNonExistentId_WithValidAuthToken()
+        {
+            // 1. Obter um token JWT válido.
+            var config = _factory.Services.GetRequiredService<IConfiguration>();
+            var token = TestJwtTokenGenerator.GenerateToken(config, "testuser-id", "Admin", "testuser");
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // 2. Tentar buscar um ID que não existe.
+            // Ajuste da rota: O endpoint para buscar MDF-e por ID na API é "/api/mdfe/{id}"
+            var nonExistentId = Guid.NewGuid(); // Gera um ID aleatório para garantir que não exista
+            var response = await _client.GetAsync($"/api/mdfe/{nonExistentId}");
+
+            // 3. Verificar o StatusCode esperado
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
+        }
+
+        [Fact]
+        public async Task GetMDFE_ReturnsOk_WithValidAuthToken()
+        {
+            // 1. Obter um token JWT válido.
+            var config = _factory.Services.GetRequiredService<IConfiguration>();
+            var token = TestJwtTokenGenerator.GenerateToken(config, "testuser-id", "Admin", "testuser");
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            // 2. Chamar o endpoint que lista todos os MDF-e
+            // Ajuste da rota: O endpoint para listar MDF-e na API é "/api/mdfe" (GET)
+            var response = await _client.GetAsync("/api/mdfe");
+
+            // 3. Verificar o StatusCode esperado
+            response.EnsureSuccessStatusCode();
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }
 }

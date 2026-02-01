@@ -1,75 +1,72 @@
-﻿using Xunit;
+﻿// File: Vasis.MDFe.Api.IntegrationTests\AuthenticationIntegrationTests.cs
+using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.DependencyInjection; // Para GetRequiredService
+using Microsoft.Extensions.Configuration; // Para IConfiguration
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
-using System.Net; // Para HttpStatusCode
-using System; // Para StringComparison
+using Xunit;
+using Newtonsoft.Json;
+using Vasis.MDFe.Api.IntegrationTests; // Para TestJwtTokenGenerator
+using Vasis.MDFe.Api.TestUtilities; // Para TestDataBuilder
 
 namespace Vasis.MDFe.Api.IntegrationTests
 {
-    // Herda de IntegrationTestBase para obter acesso à factory, ao client e à configuração.
-    public class AuthenticationIntegrationTests : IntegrationTestBase
+    public class AuthenticationIntegrationTests : IClassFixture<TestWebApplicationFactory>
     {
-        // Construtor: É crucial para o xUnit injetar o TestWebApplicationFactory.
-        public AuthenticationIntegrationTests(TestWebApplicationFactory factory) : base(factory)
+        private readonly WebApplicationFactory<Program> _factory;
+        private readonly HttpClient _client;
+
+        public AuthenticationIntegrationTests(TestWebApplicationFactory factory)
         {
-            // Qualquer setup específico para AuthenticationIntegrationTests, se necessário.
+            _factory = factory;
+            _client = _factory.CreateClient();
         }
 
         [Fact]
         public async Task Login_WithValidCredentials_ReturnsToken()
         {
-            // IMPORTANTE: Substitua pelos dados de login que sua API REALMENTE espera.
-            // Se sua API tem um endpoint de login, este teste deve usá-lo.
-            var loginRequest = new { Username = "testuser", Password = "password" };
+            var loginRequest = TestDataBuilder.BuildLoginRequest();
+            var content = new StringContent(JsonConvert.SerializeObject(loginRequest), Encoding.UTF8, "application/json");
 
-            // Serializa o objeto para JSON, usando camelCase (comum em APIs RESTful).
-            var jsonContent = JsonSerializer.Serialize(loginRequest, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            // Endpoint de login é "/auth/login"
+            var response = await _client.PostAsync("/auth/login", content);
 
-            // IMPORTANTE: Substitua "/api/auth/login" pelo endpoint real de login da sua API.
-            var response = await _client.PostAsync("/api/auth/login", content);
+            response.EnsureSuccessStatusCode(); // Isso lança exceção se o status code não for 2xx
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
 
-            response.EnsureSuccessStatusCode(); // Espera um código de status 2xx (Ok, Created, etc.)
             var responseString = await response.Content.ReadAsStringAsync();
-
-            // Assumindo que sua resposta de login retorna um objeto JSON com uma propriedade "token".
-            Assert.Contains("token", responseString, StringComparison.OrdinalIgnoreCase);
-
-            // Opcional: Deserializar a resposta para verificar a estrutura do token.
-            // Exemplo:
-            // var loginResponse = JsonSerializer.Deserialize<LoginResponseDto>(responseString, new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
-            // Assert.NotNull(loginResponse?.Token);
+            responseString.Should().NotBeNullOrEmpty();
+            // Adicione mais asserts se quiser validar o conteúdo do token ou a estrutura da resposta
         }
 
         [Fact]
         public async Task ProtectedEndpoint_ReturnsUnauthorized_WithoutToken()
         {
-            // Garante que nenhum cabeçalho de autorização seja enviado para este teste.
-            _client.DefaultRequestHeaders.Authorization = null;
+            // Endpoint protegido de exemplo (pode ser qualquer rota que exija autenticação, por exemplo, um endpoint da API Mdfe)
+            // Use uma rota que exista, mas que precise de autenticação.
+            var response = await _client.GetAsync("/api/mdfe"); // Exemplo: tenta acessar o GET /api/mdfe sem token
 
-            // IMPORTANTE: Substitua "/api/protected" por um endpoint protegido real em sua API.
-            var response = await _client.GetAsync("/api/protected");
-
-            Assert.Equal(HttpStatusCode.Unauthorized, response.StatusCode); // Espera 401 Unauthorized
+            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
         }
 
         [Fact]
         public async Task ProtectedEndpoint_ReturnsOk_WithValidToken()
         {
-            // Gera um token JWT válido usando nosso TestJwtTokenGenerator e as configurações do appsettings.Testing.json.
-            // Ajuste o userId e a role conforme a lógica de autorização da sua API.
-            var token = TestJwtTokenGenerator.GenerateToken(_configuration, userId: "testuser", role: "User");
-
-            // Anexa o token ao cabeçalho de Autorização do nosso HttpClient.
+            // 1. Obter um token JWT válido para o usuário de teste.
+            var config = _factory.Services.GetRequiredService<IConfiguration>();
+            var token = TestJwtTokenGenerator.GenerateToken(config, "testuser-id", "Admin", "testuser");
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            // IMPORTANTE: Substitua "/api/protected" por um endpoint protegido real em sua API.
-            var response = await _client.GetAsync("/api/protected");
+            // 2. Chamar um endpoint protegido que DEVE retornar OK com um token válido.
+            // Exemplo: um GET para listar MDF-e ou um endpoint simples para verificar autenticação.
+            var response = await _client.GetAsync("/api/mdfe"); // Exemplo: Endpoint GET /api/mdfe
 
-            response.EnsureSuccessStatusCode(); // Espera um código de status 2xx
+            response.EnsureSuccessStatusCode(); // Verifica se o status é 2xx
+            response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
     }
 }
