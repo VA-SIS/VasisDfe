@@ -1,56 +1,55 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 
-// O namespace do seu projeto de testes de integração.
 namespace Vasis.MDFe.Api.IntegrationTests
 {
     public static class TestJwtTokenGenerator
     {
         /// <summary>
-        /// Gera um token JWT para uso em testes de integração, usando as configurações do IConfiguration.
+        /// Gera um token JWT para uso em testes de integração.
+        /// As configurações (Key, Issuer, Audience) são lidas de 'JwtSettings' no IConfiguration.
         /// </summary>
-        /// <param name="configuration">A instância de IConfiguration (obtida da TestWebApplicationFactory).</param>
-        /// <param name="userId">O ID do usuário a ser incluído no token.</param>
-        /// <param name="role">A role do usuário a ser incluída no token.</param>
-        /// <returns>Um token JWT válido.</returns>
-        public static string GenerateToken(IConfiguration configuration, string userId = "test-user-id", string role = "User")
+        /// <param name="configuration">A instância de IConfiguration (normalmente obtida do TestWebApplicationFactory).</param>
+        /// <param name="userId">O ID do usuário a ser incluído no token (ClaimTypes.NameIdentifier).</param>
+        /// <param name="role">A função do usuário a ser incluída no token (ClaimTypes.Role).</param>
+        /// <param name="username">O nome de usuário a ser incluído no token (ClaimTypes.Name). Se nulo, usa o userId.</param>
+        /// <returns>Uma string representando o token JWT gerado.</returns>
+        /// <exception cref="InvalidOperationException">Lançada se as configurações JWT não estiverem corretamente definidas.</exception>
+        public static string GenerateToken(IConfiguration configuration, string userId, string role, string username = null)
         {
-            // Lê as configurações JWT do ambiente de teste (appsettings.Testing.json)
-            var key = configuration["Jwt:Key"];
-            var issuer = configuration["Jwt:Issuer"];
-            var audience = configuration["Jwt:Audience"];
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            var keyString = jwtSettings["Key"];
+            var issuer = jwtSettings["Issuer"];
+            var audience = jwtSettings["Audience"];
 
-            // Validação básica para garantir que as configurações foram carregadas
-            if (string.IsNullOrEmpty(key) || string.IsNullOrEmpty(issuer) || string.IsNullOrEmpty(audience))
+            if (string.IsNullOrEmpty(keyString) || string.IsNullOrEmpty(issuer) || string.IsNullOrEmpty(audience))
             {
-                throw new InvalidOperationException("Configurações JWT (Key, Issuer, Audience) ausentes ou inválidas em appsettings.Testing.json.");
+                throw new InvalidOperationException("JwtSettings não estão configurados corretamente em appsettings.Testing.json. Verifique 'Key', 'Issuer' e 'Audience'.");
             }
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var key = Encoding.ASCII.GetBytes(keyString);
 
-            // Define as claims do token. Adicione outras claims conforme a sua API espera/valida.
-            var claims = new[]
+            var tokenDescriptor = new SecurityTokenDescriptor
             {
-                new Claim(JwtRegisteredClaimNames.Sub, userId), // Subject ID
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()), // JWT ID
-                new Claim(ClaimTypes.Name, userId), // Nome do usuário
-                new Claim(ClaimTypes.Role, role) // Role do usuário
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.NameIdentifier, userId),
+                    new Claim(ClaimTypes.Name, username ?? userId), // Usa userId se username não for fornecido
+                    new Claim(ClaimTypes.Role, role)
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(60), // Token válido por 60 minutos
+                Issuer = issuer,
+                Audience = audience,
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
-            var token = new JwtSecurityToken(
-                issuer: issuer,
-                audience: audience,
-                claims: claims,
-                expires: DateTime.UtcNow.AddHours(1), // Token válido por 1 hora
-                signingCredentials: credentials
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
     }
 }

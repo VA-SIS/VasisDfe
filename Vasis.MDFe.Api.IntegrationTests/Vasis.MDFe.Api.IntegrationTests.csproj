@@ -10,7 +10,13 @@
     <!-- ADICIONE ESTA LINHA AQUI -->
     <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
-
+  
+  <ItemGroup>
+    <None Update="appsettings.Testing.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
@@ -30,7 +36,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.Test.json">
+    <Compile Update="AuthenticationIntegrationTests.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.Testing.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

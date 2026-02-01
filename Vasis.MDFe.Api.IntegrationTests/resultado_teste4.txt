@@ -1,0 +1,2 @@
+MSBUILD : error MSB1009: Arquivo de projeto não existe.
+Opção: Vasis.MDFe.Api.IntegrationTests

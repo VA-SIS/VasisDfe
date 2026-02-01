@@ -1,26 +1,25 @@
-﻿using System.Net.Http;
-using Xunit;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration; // Necessário para IConfiguration
+﻿using Xunit;
+using System.Net.Http;
+using Microsoft.Extensions.Configuration; // Para IConfiguration
+using Microsoft.Extensions.DependencyInjection; // Para GetRequiredService
 
-// O namespace do seu projeto de testes de integração.
 namespace Vasis.MDFe.Api.IntegrationTests
 {
-    // IClassFixture<TFixture> é uma interface do xUnit que permite compartilhar o estado
-    // de uma classe fixture (nossa TestWebApplicationFactory) entre todos os testes de uma classe.
+    // Esta classe base garante que cada fixture de teste obtenha sua própria instância de WebApplicationFactory
+    // e, portanto, seu próprio HttpClient, promovendo o isolamento dos testes.
+    // IClassFixture<T> é uma interface do xUnit.net para criar uma única instância de fixture de teste
+    // e compartilhá-la entre todos os testes na classe de teste.
     public abstract class IntegrationTestBase : IClassFixture<TestWebApplicationFactory>
     {
-        protected readonly HttpClient _client;
         protected readonly TestWebApplicationFactory _factory;
+        protected readonly HttpClient _client;
         protected readonly IConfiguration _configuration; // Para acessar as configurações do appsettings.Testing.json
 
-        public IntegrationTestBase(TestWebApplicationFactory factory)
+        protected IntegrationTestBase(TestWebApplicationFactory factory)
         {
             _factory = factory;
-            _client = _factory.CreateClient(); // Cria um HttpClient conectado à instância da API em memória
-
-            // Obtém o IConfiguration do serviço da API em teste.
-            // Isso nos permitirá ler as configurações JWT que a API está usando nos testes.
+            _client = _factory.CreateClient();
+            // Obtém o IConfiguration dos serviços da factory.
             _configuration = _factory.Services.GetRequiredService<IConfiguration>();
         }
     }
