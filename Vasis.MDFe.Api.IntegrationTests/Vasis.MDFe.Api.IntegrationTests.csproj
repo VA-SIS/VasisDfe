@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,16 +7,15 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <!-- ADICIONE ESTA LINHA AQUI -->
     <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <None Update="appsettings.Testing.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
@@ -29,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Vasis.MDFe.Api\Vasis.MDFe.Api.csproj" />
+    <ProjectReference Include="..\Vasis.MDFe.Api.TestUtilities\Vasis.MDFe.Api.TestUtilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
