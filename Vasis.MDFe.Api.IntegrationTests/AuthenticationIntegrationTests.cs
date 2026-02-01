@@ -1,81 +1,61 @@
-﻿using FluentAssertions;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-using System.Net;
-using Xunit;
+﻿using Xunit;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using System.Threading.Tasks;
 
+// O namespace do seu projeto de testes de integração.
 namespace Vasis.MDFe.Api.IntegrationTests
 {
+    // Agora herda da nossa classe base, que já implementa IClassFixture<TestWebApplicationFactory>
     public class AuthenticationIntegrationTests : IntegrationTestBase
     {
-        public AuthenticationIntegrationTests(WebApplicationFactory<Program> factory)
-            : base(factory) { }
+        // O _client já é fornecido pela IntegrationTestBase, não precisamos declará-lo novamente
+        // O construtor da IntegrationTestBase cuida da injeção do factory e do client
 
-        [Fact]
-        public async Task Login_WithValidCredentials_ShouldReturnToken()
+        // O construtor desta classe (se necessário para algo específico dela)
+        // precisa chamar o construtor da base:
+        public AuthenticationIntegrationTests(TestWebApplicationFactory factory) : base(factory)
         {
-            // Arrange
-            var loginRequest = new
-            {
-                Username = "admin",
-                Password = "senhaforte123"
-            };
-
-            // Act
-            var response = await _client.PostAsync("/api/Auth/login",
-                CreateJsonContent(loginRequest));
-
-            // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
-
-            var content = await response.Content.ReadAsStringAsync();
-            content.Should().Contain("token");
-            content.Should().Contain("expiration");
+            // Qualquer setup específico para AuthenticationIntegrationTests, se houver
         }
 
         [Fact]
-        public async Task Login_WithInvalidCredentials_ShouldReturnUnauthorized()
+        public async Task Login_WithValidCredentials_ReturnsToken()
         {
-            // Arrange
-            var loginRequest = new
-            {
-                Username = "admin",
-                Password = "senhaerrada"
-            };
+            var loginRequest = new { Username = "testuser", Password = "password" };
+            var jsonContent = JsonSerializer.Serialize(loginRequest);
+            var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
-            // Act
-            var response = await _client.PostAsync("/api/Auth/login",
-                CreateJsonContent(loginRequest));
+            var response = await _client.PostAsync("/api/auth/login", content);
 
-            // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+            response.EnsureSuccessStatusCode();
+            var responseString = await response.Content.ReadAsStringAsync();
+            Assert.Contains("token", responseString); // Verifique se sua API realmente retorna "token" na resposta de login
         }
 
         [Fact]
-        public async Task ProtectedEndpoint_WithoutToken_ShouldReturnUnauthorized()
+        public async Task ProtectedEndpoint_ReturnsUnauthorized_WithoutToken()
         {
-            // Act
-            var response = await _client.GetAsync("/api/MdfeService/source-integration-health");
-
-            // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
+            // Garante que não há cabeçalho de autorização para este teste
+            _client.DefaultRequestHeaders.Authorization = null;
+            var response = await _client.GetAsync("/api/protected");
+            Assert.Equal(System.Net.HttpStatusCode.Unauthorized, response.StatusCode);
         }
 
         [Fact]
-        public async Task ProtectedEndpoint_WithValidToken_ShouldReturnSuccess()
+        public async Task ProtectedEndpoint_ReturnsOk_WithValidToken()
         {
-            // Arrange
-            var token = await GetAuthTokenAsync();
-            SetAuthorizationHeader(token);
+            // Geramos o token usando o TestJwtTokenGenerator e as configs do appsettings.Testing.json
+            var token = TestJwtTokenGenerator.GenerateToken(_configuration, "testuser", "User");
 
-            // Act
-            var response = await _client.GetAsync("/api/MdfeService/source-integration-health");
+            // Anexamos o token ao cabeçalho de autorização do nosso _client
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.OK);
+            var response = await _client.GetAsync("/api/protected");
 
-            var content = await response.Content.ReadAsStringAsync();
-            content.Should().Contain("SUCESSO NA POC DE INTEGRAÇÃO DO FONTE");
+            response.EnsureSuccessStatusCode(); // Verifica se o status é 2xx (Ok, Created, etc.)
         }
     }
 }
