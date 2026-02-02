@@ -9,24 +9,18 @@ namespace Vasis.MDFe.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        /// <summary>
-        /// Adiciona serviços core da aplicação
-        /// </summary>
         public static IServiceCollection AddCoreServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddControllers();
             services.AddEndpointsApiExplorer();
 
-            // Registro de serviços MDFe
+            // Registro dos serviços da aplicação
             services.AddScoped<IMDFeValidationService, MDFeValidationService>();
             services.AddScoped<IMDFeLifecycleService, MDFeLifecycleService>();
 
             return services;
         }
 
-        /// <summary>
-        /// Configura Swagger com suporte a JWT
-        /// </summary>
         public static IServiceCollection AddCustomSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
@@ -35,19 +29,19 @@ namespace Vasis.MDFe.Api.Extensions
                 {
                     Title = "Vasis MDFe API",
                     Version = "v1",
-                    Description = "API completa para gerenciamento do ciclo de vida do MDFe"
+                    Description = "API para geração e validação de MDFe baseada no DFe.NET"
                 });
 
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
-                    Description = "JWT Authorization header using the Bearer scheme. Example: Authorization: Bearer { token }",
+                    Description = "JWT Authorization header usando Bearer scheme. Formato: Authorization: Bearer { token }",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
                 });
 
-                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
                         new OpenApiSecurityScheme
@@ -56,12 +50,9 @@ namespace Vasis.MDFe.Api.Extensions
                             {
                                 Type = ReferenceType.SecurityScheme,
                                 Id = "Bearer"
-                            },
-                            Scheme = "oauth2",
-                            Name = "Bearer",
-                            In = ParameterLocation.Header
+                            }
                         },
-                        new List<string>()
+                        Array.Empty<string>()
                     }
                 });
             });
@@ -69,9 +60,6 @@ namespace Vasis.MDFe.Api.Extensions
             return services;
         }
 
-        /// <summary>
-        /// Configura CORS
-        /// </summary>
         public static IServiceCollection AddCustomCors(this IServiceCollection services)
         {
             services.AddCors(options =>
@@ -87,22 +75,13 @@ namespace Vasis.MDFe.Api.Extensions
             return services;
         }
 
-        /// <summary>
-        /// Configura autenticação JWT
-        /// </summary>
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
             var secretKey = jwtSettings["SecretKey"] ??
-               configuration["JwtSettings:SecretKey"] ??
-               "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
+                           "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
 
-            // Validação adicional
-            if (string.IsNullOrWhiteSpace(secretKey) || secretKey.Length < 32)
-            {
-                secretKey = "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
-                Console.WriteLine("⚠️ Usando JWT SecretKey padrão para desenvolvimento");
-            }
+            var key = Encoding.ASCII.GetBytes(secretKey);
 
             services.AddAuthentication(options =>
             {
@@ -111,15 +90,18 @@ namespace Vasis.MDFe.Api.Extensions
             })
             .AddJwtBearer(options =>
             {
+                options.RequireHttpsMetadata = false;
+                options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    ValidIssuer = jwtSettings["Issuer"],
-                    ValidAudience = jwtSettings["Audience"],
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = jwtSettings["Issuer"] ?? "Vasis.MDFe.Api",
+                    ValidateAudience = true,
+                    ValidAudience = jwtSettings["Audience"] ?? "aplicacoes_clientes",
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
 
