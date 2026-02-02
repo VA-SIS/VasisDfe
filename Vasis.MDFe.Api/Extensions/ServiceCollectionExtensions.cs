@@ -1,53 +1,120 @@
-﻿using Microsoft.AspNetCore.Builder; // Necessário para WebApplication
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using System.Text.Json;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
+using Vasis.MDFe.Api.Services;
+using Vasis.MDFe.Api.Services.Interfaces;
 
 namespace Vasis.MDFe.Api.Extensions
 {
     public static class ServiceCollectionExtensions
     {
+        /// <summary>
+        /// Adiciona serviços core da aplicação
+        /// </summary>
         public static IServiceCollection AddCoreServices(this IServiceCollection services, IConfiguration configuration)
         {
-            // Adiciona Logging
-            services.AddLogging(builder =>
-            {
-                builder.ClearProviders();
-                builder.AddConsole();
-                builder.AddDebug();
-                builder.SetMinimumLevel(configuration.GetValue<LogLevel>("Logging:LogLevel:Default", LogLevel.Information));
-            });
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
 
-            // Adiciona Controllers com opções JSON
-            services.AddControllers()
-                .AddJsonOptions(options =>
-                {
-                    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-                    options.JsonSerializerOptions.WriteIndented = true;
-                    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
-                });
-            services.AddEndpointsApiExplorer(); // Para o Swagger funcionar
+            // Registro de serviços MDFe
+            services.AddScoped<IMDFeValidationService, MDFeValidationService>();
+            services.AddScoped<IMDFeLifecycleService, MDFeLifecycleService>();
 
             return services;
         }
 
+        /// <summary>
+        /// Configura Swagger com suporte a JWT
+        /// </summary>
+        public static IServiceCollection AddCustomSwagger(this IServiceCollection services)
+        {
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Vasis MDFe API",
+                    Version = "v1",
+                    Description = "API completa para gerenciamento do ciclo de vida do MDFe"
+                });
+
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme. Example: Authorization: Bearer { token }",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
+            });
+
+            return services;
+        }
+
+        /// <summary>
+        /// Configura CORS
+        /// </summary>
         public static IServiceCollection AddCustomCors(this IServiceCollection services)
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowSwaggerUI", policy => // Nome da política conforme seu Program.cs original
+                options.AddPolicy("AllowAll", policy =>
                 {
                     policy.AllowAnyOrigin()
                           .AllowAnyMethod()
                           .AllowAnyHeader();
                 });
             });
+
             return services;
         }
 
-        // Se houver outros serviços customizados (ex: suas interfaces/implementações de MDFe, Auth, Token),
-        // eles seriam adicionados aqui ou em outro método de extensão específico para serviços de domínio.
-        // Por enquanto, vamos manter apenas o que está no seu Program.cs original para compilar.
+        /// <summary>
+        /// Configura autenticação JWT
+        /// </summary>
+        public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
+        {
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["SecretKey"];
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = jwtSettings["Issuer"],
+                    ValidAudience = jwtSettings["Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                };
+            });
+
+            return services;
+        }
     }
 }
