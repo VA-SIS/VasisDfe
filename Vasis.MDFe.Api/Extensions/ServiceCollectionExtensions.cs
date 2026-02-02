@@ -93,7 +93,16 @@ namespace Vasis.MDFe.Api.Extensions
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"];
+            var secretKey = jwtSettings["SecretKey"] ??
+               configuration["JwtSettings:SecretKey"] ??
+               "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
+
+            // Validação adicional
+            if (string.IsNullOrWhiteSpace(secretKey) || secretKey.Length < 32)
+            {
+                secretKey = "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
+                Console.WriteLine("⚠️ Usando JWT SecretKey padrão para desenvolvimento");
+            }
 
             services.AddAuthentication(options =>
             {

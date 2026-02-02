@@ -1,41 +1,186 @@
-// Program.cs - VERS√O MODULARIZADA E LIMPA (Com Extensions Separadas)
-using Vasis.MDFe.Api.Extensions; // Importa todos os novos mÈtodos de extens„o
+Ôªøusing Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
+using Vasis.MDFe.Api.Services;
+using Vasis.MDFe.Api.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // ===================================================================================
-// INÕCIO: AdiÁ„o e ConfiguraÁ„o de ServiÁos (builder.Services)
+// IN√çCIO: Adi√ß√£o e Configura√ß√£o de Servi√ßos (builder.Services)
 // ===================================================================================
 
-// Adiciona serviÁos "core" da aplicaÁ„o (Controllers, EndpointsApiExplorer, Logging)
-builder.Services.AddCoreServices(builder.Configuration);
+// Adiciona servi√ßos b√°sicos
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 
-// ConfiguraÁ„o do Swagger/OpenAPI com suporte a JWT
-builder.Services.AddCustomSwagger();
+// Configura√ß√£o do Swagger/OpenAPI com suporte a JWT
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Vasis MDFe API",
+        Version = "v1",
+        Description = "API para gera√ß√£o e valida√ß√£o de MDFe baseada no DFe.NET"
+    });
 
-// ConfiguraÁ„o CORS
-builder.Services.AddCustomCors();
+    // Configura√ß√£o JWT para Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "JWT Authorization header usando Bearer scheme. Exemplo: Authorization: Bearer { token }",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
 
-// ConfiguraÁ„o e AdiÁ„o da AutenticaÁ„o JWT (incluindo validaÁ„o de config e eventos)
-builder.Services.AddJwtAuthentication(builder.Configuration);
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
+// Configura√ß√£o CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+// Configura√ß√£o da Autentica√ß√£o JWT
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
+var secretKey = jwtSettings["SecretKey"] ??
+               "SUA_CHAVE_SECRETA_MUITO_FORTE_E_LONGA_E_ALEATORIA_QUE_NINGUEM_VAI_ADIVINHAR";
+
+if (string.IsNullOrWhiteSpace(secretKey) || secretKey.Length < 32)
+{
+    secretKey = "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
+    Console.WriteLine("‚ö†Ô∏è Usando JWT SecretKey padr√£o para desenvolvimento");
+}
+
+var key = Encoding.ASCII.GetBytes(secretKey);
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidIssuer = jwtSettings["Issuer"] ?? "Vasis.MDFe.Api",
+        ValidateAudience = true,
+        ValidAudience = jwtSettings["Audience"] ?? "aplicacoes_clientes",
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+
+    options.Events = new JwtBearerEvents
+    {
+        OnAuthenticationFailed = context =>
+        {
+            Console.WriteLine($"‚ùå JWT Authentication failed: {context.Exception.Message}");
+            return Task.CompletedTask;
+        },
+        OnTokenValidated = context =>
+        {
+            Console.WriteLine("‚úÖ JWT Token validated successfully");
+            return Task.CompletedTask;
+        }
+    };
+});
+
+// Registro dos servi√ßos da aplica√ß√£o
+builder.Services.AddScoped<IMDFeValidationService, MDFeValidationService>();
+builder.Services.AddScoped<IMDFeLifecycleService, MDFeLifecycleService>();
+
+// Configura√ß√£o de Logging
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Logging.AddDebug();
 
 // ===================================================================================
-// FIM: AdiÁ„o e ConfiguraÁ„o de ServiÁos
+// FIM: Adi√ß√£o e Configura√ß√£o de Servi√ßos
 // ===================================================================================
 
 var app = builder.Build();
 
 // ===================================================================================
-// INÕCIO: ConfiguraÁ„o do Pipeline de RequisiÁıes HTTP (app.Use)
+// IN√çCIO: Configura√ß√£o do Pipeline de Requisi√ß√µes HTTP (app.Use)
 // ===================================================================================
 
-// Configura o pipeline da aplicaÁ„o
-app.ConfigureRequestPipeline();
+// Configura√ß√£o do pipeline para Development
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API v1");
+        c.RoutePrefix = string.Empty; // Swagger na raiz
+    });
+}
+
+// Pipeline de requisi√ß√µes
+app.UseHttpsRedirection();
+app.UseCors("AllowAll");
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+
+// Endpoint de health check
+app.MapGet("/health", () => new {
+    Status = "Healthy",
+    Timestamp = DateTime.UtcNow,
+    Version = "1.0.0",
+    Environment = app.Environment.EnvironmentName,
+    Services = new
+    {
+        ValidationService = "Active",
+        LifecycleService = "Active",
+        JwtAuthentication = "Configured"
+    }
+}).WithTags("Health");
+
+// Endpoint de informa√ß√µes da API
+app.MapGet("/", () => new {
+    Message = "Vasis MDFe API est√° funcionando!",
+    Version = "1.0.0",
+    Documentation = "/swagger",
+    Health = "/health",
+    Timestamp = DateTime.UtcNow
+}).WithTags("Info");
 
 // ===================================================================================
-// FIM: ConfiguraÁ„o do Pipeline de RequisiÁıes HTTP
+// FIM: Configura√ß√£o do Pipeline de Requisi√ß√µes HTTP
 // ===================================================================================
+
+Console.WriteLine("üöÄ Iniciando Vasis MDFe API...");
+Console.WriteLine($"üìç Ambiente: {app.Environment.EnvironmentName}");
+Console.WriteLine("üìñ Documenta√ß√£o dispon√≠vel em: /swagger");
+Console.WriteLine("üíö Health check dispon√≠vel em: /health");
 
 app.Run();
 
+// Classe parcial para testes
 public partial class Program { }
