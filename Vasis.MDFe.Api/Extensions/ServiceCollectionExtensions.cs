@@ -77,8 +77,7 @@ namespace Vasis.MDFe.Api.Extensions
 
         public static IServiceCollection AddJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            var jwtSettings = configuration.GetSection("JwtSettings");
-            var secretKey = jwtSettings["SecretKey"] ??
+            var secretKey = configuration["Jwt:Key"] ??
                            "minha-chave-secreta-super-segura-para-desenvolvimento-com-pelo-menos-32-caracteres";
 
             var key = Encoding.ASCII.GetBytes(secretKey);
@@ -97,9 +96,9 @@ namespace Vasis.MDFe.Api.Extensions
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(key),
                     ValidateIssuer = true,
-                    ValidIssuer = jwtSettings["Issuer"] ?? "Vasis.MDFe.Api",
+                    ValidIssuer = configuration["Jwt:Issuer"] ?? "Vasis.MDFe.Api",
                     ValidateAudience = true,
-                    ValidAudience = jwtSettings["Audience"] ?? "aplicacoes_clientes",
+                    ValidAudience = configuration["Jwt:Audience"] ?? "aplicacoes_clientes",
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
