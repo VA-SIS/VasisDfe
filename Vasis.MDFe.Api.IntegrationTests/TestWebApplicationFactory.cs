@@ -6,8 +6,9 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
+using System.Reflection; // Necessário para typeof(Program).Assembly
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.ApplicationParts; // Necessário para ApplicationPart e AssemblyPart
 
 namespace Vasis.MDFe.Api.IntegrationTests
 {
@@ -19,14 +20,13 @@ namespace Vasis.MDFe.Api.IntegrationTests
 
             builder.ConfigureAppConfiguration((context, conf) =>
             {
-                conf.Sources.Clear(); // Limpa as fontes de configuração existentes para ter controle total
+                conf.Sources.Clear();
 
                 var integrationTestsAssembly = Assembly.GetExecutingAssembly();
                 var configFileName = "appsettings.Testing.json";
 
                 var possiblePaths = new[]
                 {
-                    // Tenta encontrar appsettings.Testing.json em diferentes locais
                     Path.Combine(Path.GetDirectoryName(integrationTestsAssembly.Location), configFileName),
                     Path.Combine(Directory.GetCurrentDirectory(), configFileName),
                     Path.Combine(AppDomain.CurrentDomain.BaseDirectory, configFileName)
@@ -42,11 +42,9 @@ namespace Vasis.MDFe.Api.IntegrationTests
                     }
                 }
 
-                // Adiciona appsettings.json e appsettings.Development.json se existirem
                 conf.AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
                     .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: false);
 
-                // Adiciona o appsettings.Testing.json se encontrado
                 if (foundPath != null)
                 {
                     conf.AddJsonFile(foundPath, optional: false, reloadOnChange: false);
@@ -59,49 +57,58 @@ namespace Vasis.MDFe.Api.IntegrationTests
 
                 var inMemorySettings = new Dictionary<string, string?>
                 {
-                    // ***** CORREÇÃO APLICADA AQUI: prefixo "Jwt:" conforme o AddJwtAuthentication *****
                     ["Jwt:Key"] = "minha-chave-secreta-super-segura-para-testes-com-pelo-menos-32-caracteres-e-eh-longa",
                     ["Jwt:Issuer"] = "VasisDfe.Api",
                     ["Jwt:Audience"] = "VasisDfe.Api.Clients",
-                    ["Jwt:ExpiryInMinutes"] = "60", // Mantenha, se precisar para o teste de expiração
+                    ["Jwt:ExpiryInMinutes"] = "60",
 
-                    // Configurações para Zeus (DFe.NET)
                     ["ZeusConfig:DiretorioSchemas"] = @"C:\Zeus\Schemas",
                     ["ZeusConfig:DiretorioTemplates"] = @"C:\Zeus\Templates",
                     ["ZeusConfig:DiretorioSaida"] = @"C:\Zeus\Output",
-                    ["ZeusConfig:TipoAmbiente"] = "2", // Homologação
+                    ["ZeusConfig:TipoAmbiente"] = "2",
                     ["ZeusConfig:VersaoServico"] = "3.00",
 
-                    // Configurações de Certificado
                     ["Certificado:CaminhoArquivo"] = @"C:\Zeus\Certificados\certificado_teste.pfx",
                     ["Certificado:Senha"] = "123456",
-                    ["Certificado:Serial"] = "", // Preencha se for relevante para os testes
-                    ["Certificado:Thumbprint"] = "", // Preencha se for relevante para os testes
+                    ["Certificado:Serial"] = "",
+                    ["Certificado:Thumbprint"] = "",
 
-                    // Configurações de Banco de Dados (Exemplo: SQLite in-memory para testes)
                     ["ConnectionStrings:DefaultConnection"] = "Data Source=:memory:",
 
-                    // Configurações de Logging
                     ["Logging:LogLevel:Default"] = "Information",
                     ["Logging:LogLevel:Microsoft.AspNetCore"] = "Warning",
                     ["Logging:LogLevel:Vasis.MDFe.Api"] = "Debug",
                     ["AllowedHosts"] = "*",
 
-                    // Flag para desabilitar redirecionamento HTTPS em testes
                     ["DisableHttpsRedirectionForTests"] = "true"
                 };
 
-                // Adiciona configurações em memória, que têm precedência sobre os arquivos JSON
                 conf.AddInMemoryCollection(inMemorySettings);
-                // Permite sobrescrever com variáveis de ambiente (útil para CI/CD)
                 conf.AddEnvironmentVariables();
             });
 
             builder.ConfigureServices(services =>
             {
-                // Aqui você pode adicionar mocks ou substituir serviços para os testes de integração.
-                // Exemplo: services.RemoveAll<ISomeService>();
-                // services.AddSingleton<ISomeService, MockSomeService>();
+                // Obtenha o IMvcBuilder para acessar o ApplicationPartManager.
+                // Isso garante que o contexto de teste da WebApplicationFactory
+                // seja configurado para encontrar os controladores da sua API.
+                var mvcBuilder = services.AddControllers();
+
+                var applicationPartManager = mvcBuilder.PartManager;
+
+                // Adiciona a assembly do seu projeto API principal (Vasis.MDFe.Api) como um Application Part
+                // se ainda não estiver presente. Isso garante a descoberta dos seus controladores.
+                if (!applicationPartManager.ApplicationParts.OfType<AssemblyPart>().Any(p => p.Assembly == typeof(Program).Assembly))
+                {
+                    applicationPartManager.ApplicationParts.Add(new AssemblyPart(typeof(Program).Assembly));
+                    Console.WriteLine($"[TestWebApplicationFactory] Added '{typeof(Program).Assembly.GetName().Name}' as ApplicationPart for MVC controller discovery.");
+                }
+                else
+                {
+                    Console.WriteLine($"[TestWebApplicationFactory] '{typeof(Program).Assembly.GetName().Name}' already exists as ApplicationPart.");
+                }
+
+                // Não é necessário chamar .AddNewtonsoftJson() aqui, pois migramos para System.Text.Json (o padrão).
             });
         }
     }
