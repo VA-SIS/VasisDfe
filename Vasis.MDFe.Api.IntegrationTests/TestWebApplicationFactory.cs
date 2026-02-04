@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Linq;
 
 namespace Vasis.MDFe.Api.IntegrationTests
 {
@@ -18,7 +19,8 @@ namespace Vasis.MDFe.Api.IntegrationTests
 
             builder.ConfigureAppConfiguration((context, conf) =>
             {
-                // Localiza o appsettings.Testing.json
+                conf.Sources.Clear();
+
                 var integrationTestsAssembly = Assembly.GetExecutingAssembly();
                 var configFileName = "appsettings.Testing.json";
 
@@ -39,6 +41,9 @@ namespace Vasis.MDFe.Api.IntegrationTests
                     }
                 }
 
+                conf.AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+                    .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: false);
+
                 if (foundPath != null)
                 {
                     conf.AddJsonFile(foundPath, optional: false, reloadOnChange: false);
@@ -46,49 +51,45 @@ namespace Vasis.MDFe.Api.IntegrationTests
                 }
                 else
                 {
-                    // ✅ CORRIGIDO: Usando @ para verbatim strings
-                    var inMemorySettings = new Dictionary<string, string>
-                    {
-                        ["JwtSettings:SecretKey"] = "minha-chave-secreta-super-segura-para-testes-com-pelo-menos-32-caracteres-e-eh-longa",
-                        ["JwtSettings:Issuer"] = "VasisDfe.Api",
-                        ["JwtSettings:Audience"] = "VasisDfe.Api.Clients",
-                        ["JwtSettings:ExpiryMinutes"] = "60",
-
-                        // ✅ CORRIGIDO: Usando @ para paths do Windows
-                        ["ZeusConfig:DiretorioSchemas"] = @"C:\Zeus\Schemas",
-                        ["ZeusConfig:DiretorioTemplates"] = @"C:\Zeus\Templates",
-                        ["ZeusConfig:DiretorioSaida"] = @"C:\Zeus\Output",
-                        ["ZeusConfig:TipoAmbiente"] = "2",
-                        ["ZeusConfig:VersaoServico"] = "3.00",
-
-                        ["Certificado:CaminhoArquivo"] = @"C:\Zeus\Certificados\certificado_teste.pfx",
-                        ["Certificado:Senha"] = "123456",
-                        ["Certificado:Serial"] = "",
-                        ["Certificado:Thumbprint"] = "",
-
-                        ["ConnectionStrings:DefaultConnection"] = "Data Source=:memory:",
-
-                        ["Logging:LogLevel:Default"] = "Information",
-                        ["Logging:LogLevel:Microsoft.AspNetCore"] = "Warning",
-                        ["Logging:LogLevel:Vasis.MDFe.Api"] = "Debug",
-                        ["AllowedHosts"] = "*"
-                    };
-                    conf.AddInMemoryCollection(inMemorySettings);
-
-                    var expectedPath = Path.Combine(Path.GetDirectoryName(integrationTestsAssembly.Location), configFileName);
-                    throw new FileNotFoundException(
-                        $"O arquivo de configuração '{configFileName}' NÃO FOI ENCONTRADO no caminho esperado: '{expectedPath}'. " +
-                        "Por favor, verifique se o arquivo está na raiz do seu projeto de testes (Vasis.MDFe.Api.IntegrationTests) " +
-                        "e se o .csproj está configurado para copiá-lo para o diretório de saída " +
-                        "(com <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>).");
+                    Console.WriteLine($"[TestWebApplicationFactory] {configFileName} NOT FOUND in expected paths. Using in-memory settings only.");
                 }
 
+                var inMemorySettings = new Dictionary<string, string?>
+                {
+                    // Assegure-se de que 'JwtSettings' aqui corresponde ao que sua API usa.
+                    ["JwtSettings:SecretKey"] = "minha-chave-secreta-super-segura-para-testes-com-pelo-menos-32-caracteres-e-eh-longa",
+                    ["JwtSettings:Issuer"] = "VasisDfe.Api",
+                    ["JwtSettings:Audience"] = "VasisDfe.Api.Clients",
+                    ["JwtSettings:ExpiryInMinutes"] = "60",
+
+                    ["ZeusConfig:DiretorioSchemas"] = @"C:\Zeus\Schemas",
+                    ["ZeusConfig:DiretorioTemplates"] = @"C:\Zeus\Templates",
+                    ["ZeusConfig:DiretorioSaida"] = @"C:\Zeus\Output",
+                    ["ZeusConfig:TipoAmbiente"] = "2", // Homologação
+                    ["ZeusConfig:VersaoServico"] = "3.00",
+
+                    ["Certificado:CaminhoArquivo"] = @"C:\Zeus\Certificados\certificado_teste.pfx",
+                    ["Certificado:Senha"] = "123456",
+                    ["Certificado:Serial"] = "",
+                    ["Certificado:Thumbprint"] = "",
+
+                    ["ConnectionStrings:DefaultConnection"] = "Data Source=:memory:",
+
+                    ["Logging:LogLevel:Default"] = "Information",
+                    ["Logging:LogLevel:Microsoft.AspNetCore"] = "Warning",
+                    ["Logging:LogLevel:Vasis.MDFe.Api"] = "Debug",
+                    ["AllowedHosts"] = "*",
+
+                    ["DisableHttpsRedirectionForTests"] = "true"
+                };
+
+                conf.AddInMemoryCollection(inMemorySettings);
                 conf.AddEnvironmentVariables();
             });
 
             builder.ConfigureServices(services =>
             {
-                // Configurações específicas para testes se necessário
+                // Configurações específicas para testes se necessário.
             });
         }
     }
