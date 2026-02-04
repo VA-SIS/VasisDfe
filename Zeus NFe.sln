@@ -133,6 +133,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NFe.Danfe.AppTeste.QuestPdf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api", "Vasis.MDFe.Api\Vasis.MDFe.Api.csproj", "{F56B6947-9B4D-46D2-B88D-95B3DBB69C9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api.Tests", "Vasis.MDFe.Api.Tests\Vasis.MDFe.Api.Tests.csproj", "{65E44936-9D80-0291-411B-12D97500E385}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -533,6 +535,14 @@ Global
 		{F56B6947-9B4D-46D2-B88D-95B3DBB69C9D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F56B6947-9B4D-46D2-B88D-95B3DBB69C9D}.Release|x86.ActiveCfg = Release|Any CPU
 		{F56B6947-9B4D-46D2-B88D-95B3DBB69C9D}.Release|x86.Build.0 = Release|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Debug|x86.Build.0 = Debug|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.ActiveCfg = Release|Any CPU
+		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
