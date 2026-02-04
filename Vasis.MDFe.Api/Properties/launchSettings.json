@@ -1,5 +1,5 @@
 ﻿{
-  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "$schema": "https://json.schemastore.org/launchsettings.json",
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
@@ -36,6 +36,56 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    // INÍCIO: NOVO PERFIL PARA SIMULAR AMBIENTE AZURE LOCALMENTE
+    "Azure Local Development": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger", // Abre o Swagger automaticamente
+      "applicationUrl": "https://localhost:7031;http://localhost:5270", // Portas diferentes para evitar conflito
+      "environmentVariables": {
+        // Simula o ambiente de produção do Azure
+        "ASPNETCORE_ENVIRONMENT": "Production",
+
+        // =========================================================================
+        // Variáveis de Ambiente que simulam as "Application Settings" do Azure
+        // Chaves aninhadas (como Jwt:Key) são representadas com '__' (dois underscores)
+        // =========================================================================
+
+        // --- Configurações JWT (ESSENCIAIS para autenticação) ---
+        // ESTA CHAVE DEVE SER A MESMA QUE VOCÊ USA PARA ASSINAR SEUS TOKENS VÁLIDOS!
+        "Jwt__Key": "SUA_CHAVE_SECRETA_MUITO_FORTE_E_LONGA_E_ALEATORIA_PARA_TESTE_LOCAL_AQUI", // **IMPORTANTE: MUDAR!**
+        "Jwt__Issuer": "Vasis.MDFe.Api",
+        "Jwt__Audience": "aplicacoes_clientes",
+        "Jwt__ExpiryInMinutes": "60",
+
+        // --- Configurações da Biblioteca DFe.NET (ZeusConfig) ---
+        // Ajuste os caminhos para onde esses arquivos/diretórios estão na sua máquina local de desenvolvimento.
+        "ZeusConfig__DiretorioSchemas": "C:\\Zeus\\Schemas",
+        "ZeusConfig__DiretorioTemplates": "C:\\Zeus\\Templates",
+        "ZeusConfig__DiretorioSaida": "C:\\Zeus\\Output",
+        "ZeusConfig__TipoAmbiente": "2", // 1=Produção, 2=Homologação. Mantenha 2 para testar com Zeus em homologação.
+        "ZeusConfig__VersaoServico": "3.00", // Ou "4.00" dependendo da sua versão alvo.
+
+        // --- Configurações de Certificado Digital (se aplicável para testes locais) ---
+        // Ajuste para o caminho do seu certificado PFX de TESTE local e sua senha.
+        "Certificado__CaminhoArquivo": "C:\\Zeus\\Certificados\\certificado_teste.pfx",
+        "Certificado__Senha": "SUA_SENHA_DO_CERTIFICADO_PFX_DE_TESTE_AQUI", // **IMPORTANTE: MUDAR!**
+        "Certificado__Serial": "", // Se usar serial, preencha
+        "Certificado__Thumbprint": "", // Se usar thumbprint, preencha
+
+        // --- Exemplo de String de Conexão com Banco de Dados ---
+        "ConnectionStrings__DefaultConnection": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=VasisMDFeLocalDev;Integrated Security=True",
+
+        // --- Outras configurações de logging ou customizadas ---
+        "Logging__LogLevel__Default": "Information",
+        "Logging__LogLevel__Microsoft.AspNetCore": "Warning",
+        "Logging__LogLevel__Vasis.MDFe.Api": "Debug",
+        "AllowedHosts": "*",
+        "DisableHttpsRedirectionForTests": "true" // Se você está desabilitando HTTPS para testes, pode simular aqui também
+      }
     }
+    // FIM: NOVO PERFIL PARA SIMULAR AMBIENTE AZURE LOCALMENTE
   }
 }

@@ -9,15 +9,28 @@ namespace Vasis.MDFe.Api.Extensions
     {
         public static WebApplication ConfigureRequestPipeline(this WebApplication app)
         {
-            if (app.Environment.IsDevelopment())
+            //if (app.Environment.IsDevelopment())
+            //{
+            //    app.UseSwagger();
+            //    app.UseSwaggerUI(c =>
+            //    {
+            //        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API v1");
+            //        c.RoutePrefix = "swagger";
+            //    });
+            //}
+
+            // ***** ALTERAÇÃO AQUI: Habilitar o Swagger para todos os ambientes *****
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
             {
-                app.UseSwagger();
-                app.UseSwaggerUI(c =>
-                {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API v1");
-                    c.RoutePrefix = "swagger";
-                });
-            }
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Vasis MDFe API v1");
+                c.RoutePrefix = "swagger";
+            });
+
+
+
+
 
             // ***** CORREÇÃO AQUI: Desabilitar o redirecionamento HTTPS para o ambiente de testes *****
             // Verifica se a flag "DisableHttpsRedirectionForTests" está definida e é verdadeira
