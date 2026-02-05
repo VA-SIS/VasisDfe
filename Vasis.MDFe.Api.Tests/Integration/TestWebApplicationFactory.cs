@@ -2,15 +2,13 @@
 
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.IO;
 
-// Importe apenas o que é estritamente necessário para TestWebApplicationFactory
-using Vasis.MDFe.Api.Extensions; // Necessário para chamar AddJwtAuthentication no ConfigureTestServices
+// NENHUM USING EXTRA É NECESSÁRIO AQUI, pois não tentaremos mais redefinir o pipeline ou serviços que já são definidos no Program.cs.
 
 namespace Vasis.MDFe.Api.Tests.Integration
 {
@@ -38,23 +36,14 @@ namespace Vasis.MDFe.Api.Tests.Integration
                 });
             });
 
-            // ✅ ConfigureTestServices: Este é o local onde você pode sobrescrever ou adicionar
-            // serviços *após* o Program.cs da API ter registrado seus serviços.
-            // É crucial garantir que a autenticação JWT esteja configurada no ambiente de teste.
-            builder.ConfigureTestServices(services =>
-            {
-                // Garante que a autenticação JWT esteja configurada para os testes.
-                // Isso resolve o 401 Unauthorized nos testes do MDFeController quando o token é válido.
-                services.AddJwtAuthentication(services.BuildServiceProvider().GetRequiredService<IConfiguration>());
+            // ✅ CRÍTICO: Removido QUALQUER chamada a services.AddJwtAuthentication() aqui.
+            // O WebApplicationFactory carregará o Program.cs da sua API, que já configura isso uma vez.
+            // ConfigureTestServices será usado APENAS se você precisar *substituir*
+            // um serviço já existente na API por um mock, mas não para adicionar serviços duplicados.
+            // Por enquanto, não há necessidade de sobrescrever nada aqui para os testes Auth/MDFe.
 
-                // IMPORTANTE: Não faremos mock ou sobrescreveremos os Health Checks aqui,
-                // pois você decidiu focar nos testes Auth e MDFe por enquanto.
-                // O WebApplicationFactory executará o Health Check real da sua API.
-            });
-
-            // ✅ MUITO IMPORTANTE: O bloco builder.Configure(app => { ... }) FOI REMOVIDO COMPLETAMENTE.
-            // O WebApplicationFactory vai usar o Program.cs da sua API para construir o pipeline real da aplicação.
-            // Isso evita os erros de compilação anteriores.
+            // ✅ Removido o bloco builder.Configure(app => { ... }) COMPLETAMENTE.
+            // O WebApplicationFactory usa o Program.cs da sua API para construir o pipeline.
 
             // Configuração do logger para os testes
             builder.ConfigureLogging(logging =>

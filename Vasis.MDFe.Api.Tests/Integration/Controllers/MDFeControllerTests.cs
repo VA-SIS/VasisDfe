@@ -22,48 +22,30 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
         [Fact]
         public async Task GetMDFe_WithoutToken_ShouldReturnUnauthorized()
         {
-            // Act
-            // Aponta para um endpoint GET da sua API que requer autorização
             var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
-
-            // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
         }
 
         [Fact]
         public async Task GetMDFe_WithValidToken_ShouldReturnSuccess()
         {
-            // Arrange
             var token = await GetValidTokenAsync();
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-            // Act
-            // Aponta para um endpoint GET da sua API que requer autorização
             var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
-
-            // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-            // Você pode adicionar mais assertions aqui para verificar o conteúdo da resposta se desejar
         }
 
         [Fact]
         public async Task GetMDFe_WithInvalidToken_ShouldReturnUnauthorized()
         {
-            // Arrange
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthTestData.InvalidJwtToken);
-
-            // Act
-            // Aponta para um endpoint GET da sua API que requer autorização
             var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
-
-            // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
         }
 
         private async Task<string> GetValidTokenAsync()
         {
             var loginRequest = AuthTestData.ValidCredentials;
-
             var response = await Client.PostAsJsonAsync("/api/auth/login", loginRequest);
 
             if (response.StatusCode != HttpStatusCode.OK)

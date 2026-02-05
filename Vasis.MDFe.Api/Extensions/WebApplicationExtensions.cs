@@ -1,24 +1,20 @@
-﻿// C:\\Zeus\\1935\\DFe.NET-2026\\Vasis.MDFe.Api.Extensions\\WebApplicationExtensions.cs
+﻿// C:\\\\\\Zeus\\\\\\1935\\\\\\DFe.NET-2026\\\\\\Vasis.MDFe.Api.Extensions\\\\\\WebApplicationExtensions.cs
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting; // ✅ ESTE USING É CRÍTICO para IsDevelopment e IsEnvironment
 using System.Text.Json;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using System.Net.Mime;
 using Microsoft.AspNetCore.Http; // Para HttpContext.Response.WriteAsync
-using System; // Para DateTime.UtcNow
-using System.Collections.Generic; // Para Dictionary
-using System.Linq; // Para ToDictionary
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Vasis.MDFe.Api.Extensions
 {
     public static class WebApplicationExtensions
     {
-        // ✅ ATENÇÃO: Se o seu Program.cs chama .ConfigureRequestPipeline() diretamente no `app` do tipo `WebApplication`,
-        // a assinatura deste método deve ser `this WebApplication app`.
-        // Se a assinatura fosse `this IApplicationBuilder app`, a correção no TestWebApplicationFactory seria mais simples.
-        // Mantenho a assinatura original para não alterar o comportamento da API principal.
         public static WebApplication ConfigureRequestPipeline(this WebApplication app)
         {
             // Ative o Swagger apenas em ambientes de desenvolvimento ou teste para não expor em produção.
@@ -41,34 +37,43 @@ namespace Vasis.MDFe.Api.Extensions
 
             app.UseCors("AllowAll"); // Habilita o CORS.
 
+            // ✅ CRÍTICO: UseRouting DEVE VIR ANTES de UseAuthentication e UseAuthorization.
+            // Se esta ordem não for seguida, as rotas protegidas podem receber 401 Unauthorized
+            // mesmo com um token válido, pois o sistema de autorização não saberá qual rota está sendo acessada.
+            app.UseRouting();
             app.UseAuthentication(); // Deve vir antes de UseAuthorization.
-            app.UseAuthorization();  // Deve vir antes de MapControllers para que as políticas sejam aplicadas.
+            app.UseAuthorization();  // Deve vir antes de UseEndpoints para que as políticas sejam aplicadas.
 
-            app.MapControllers(); // Mapeia os controladores da sua API.
-
-            // ✅ CORREÇÃO APLICADA: Mapeamento do Health Check com ResponseWriter customizado
-            // Agora ele reflete o status REAL dos serviços e os nomes das chaves sem espaços.
-            app.MapHealthChecks("/health", new HealthCheckOptions()
+            // ✅ UseEndpoints é o local correto para mapear controladores e outros endpoints
+            // quando UseRouting é usado.
+            app.UseEndpoints(endpoints =>
             {
-                ResponseWriter = async (context, report) =>
+                endpoints.MapControllers(); // Mapeia os controladores da sua API.
+
+                // Health Check Endpoint - Deixado como está, pois o foco não é consertá-lo agora.
+                endpoints.MapHealthChecks("/health", new HealthCheckOptions()
                 {
-                    // Prepara o dicionário de serviços com as chaves (sem espaços) e valores (status real) esperados
-                    var servicesStatus = report.Entries.ToDictionary(
-                        entry => entry.Key.Replace(" ", ""), // Remove espaços do nome do serviço
-                        entry => entry.Value.Status.ToString() // Use o status REAL do Health Check (Healthy, Unhealthy, Degraded)
-                    );
-
-                    var result = JsonSerializer.Serialize(new
+                    ResponseWriter = async (context, report) =>
                     {
-                        Status = report.Status.ToString(), // Será "Healthy" se todos os checks estiverem saudáveis
-                        Version = "1.0.0", // Versão fixa para corresponder ao teste
-                        Timestamp = DateTime.UtcNow, // Será serializado para string no formato ISO 8601
-                        Services = servicesStatus
-                    }, new JsonSerializerOptions { WriteIndented = true }); // Garante formatação legível
+                        var customServicesStatus = new Dictionary<string, string>();
+                        foreach (var entry in report.Entries)
+                        {
+                            string serviceName = entry.Key.Replace(" ", "");
+                            customServicesStatus[serviceName] = entry.Value.Status.ToString(); // Usar o status REAL da API
+                        }
 
-                    context.Response.ContentType = MediaTypeNames.Application.Json;
-                    await context.Response.WriteAsync(result);
-                }
+                        var result = JsonSerializer.Serialize(new
+                        {
+                            Status = report.Status.ToString(),
+                            Version = "1.0.0",
+                            Timestamp = DateTime.UtcNow,
+                            Services = customServicesStatus
+                        }, new JsonSerializerOptions { WriteIndented = true });
+
+                        context.Response.ContentType = MediaTypeNames.Application.Json;
+                        await context.Response.WriteAsync(result);
+                    }
+                });
             });
 
             return app;
