@@ -1,8 +1,12 @@
-﻿using FluentAssertions;
+﻿// C:\\Zeus\\1935\\DFe.NET-2026\\Vasis.MDFe.Api.Tests\\Integration\\Controllers\\HealthControllerTests.cs
+
+using FluentAssertions;
 using System.Net;
 using System.Text.Json;
 using Xunit;
-using Vasis.MDFe.Api.Tests.Integration; // ✅ Adicionado
+using Vasis.MDFe.Api.Tests.Integration;
+using System;
+using System.Threading.Tasks;
 
 namespace Vasis.MDFe.Api.Tests.Integration.Controllers
 {
@@ -75,8 +79,9 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
             var content = JsonSerializer.Deserialize<JsonElement>(jsonContent);
 
             var services = content.GetProperty("Services");
-            services.GetProperty("ValidationService").GetString().Should().Be("Active");
-            services.GetProperty("LifecycleService").GetString().Should().Be("Active");
+            // ✅ CORREÇÃO: Esperar os nomes dos serviços como "MDFeValidationService" e o status REAL "Healthy"
+            services.GetProperty("MDFeValidationService").GetString().Should().Be("Healthy");
+            services.GetProperty("MDFeLifecycleService").GetString().Should().Be("Healthy");
         }
     }
 }

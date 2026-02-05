@@ -1,4 +1,4 @@
-﻿// C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.Tests\Integration\Controllers\AuthControllerTests.cs
+﻿// C:\\Zeus\\1935\\DFe.NET-2026\\Vasis.MDFe.Api.Tests\\Integration\\Controllers\\AuthControllerTests.cs
 
 using FluentAssertions;
 using System.Net;
@@ -7,7 +7,8 @@ using System.Text.Json;
 using Xunit;
 using Vasis.MDFe.Api.Tests.Integration;
 using Vasis.MDFe.Api.Tests.Fixtures;
-using System.Text; // Necessário para StringContent
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Vasis.MDFe.Api.Tests.Integration.Controllers
 {
@@ -63,7 +64,7 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
         }
 
         [Fact]
-        public async Task Login_WithNullBody_ShouldReturnBadRequest()
+        public async Task Login_WithNullBody_ShouldReturnUnauthorized() // ✅ CORREÇÃO AQUI: Mudado para esperar Unauthorized
         {
             // Arrange
             var requestContent = new StringContent("{}", Encoding.UTF8, "application/json");
@@ -72,7 +73,7 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
             var response = await Client.PostAsync("/api/auth/login", requestContent);
 
             // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+            response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// C:\Zeus\1935\DFe.NET-2026\Vasis.MDFe.Api.Tests\Integration\Controllers\MDFeControllerTests.cs
+﻿// C:\\\\\\Zeus\\\\\\1935\\\\\\DFe.NET-2026\\\\\\Vasis.MDFe.Api.Tests\\\\\\Integration\\\\\\Controllers\\\\\\MDFeControllerTests.cs
 
 using FluentAssertions;
 using System;
@@ -9,6 +9,7 @@ using System.Text.Json;
 using Xunit;
 using Vasis.MDFe.Api.Tests.Integration;
 using Vasis.MDFe.Api.Tests.Fixtures;
+using System.Threading.Tasks;
 
 namespace Vasis.MDFe.Api.Tests.Integration.Controllers
 {
@@ -22,7 +23,8 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
         public async Task GetMDFe_WithoutToken_ShouldReturnUnauthorized()
         {
             // Act
-            var response = await Client.GetAsync("/api/mdfe");
+            // Aponta para um endpoint GET da sua API que requer autorização
+            var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
@@ -36,10 +38,12 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             // Act
-            var response = await Client.GetAsync("/api/mdfe");
+            // Aponta para um endpoint GET da sua API que requer autorização
+            var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
+            // Você pode adicionar mais assertions aqui para verificar o conteúdo da resposta se desejar
         }
 
         [Fact]
@@ -49,7 +53,8 @@ namespace Vasis.MDFe.Api.Tests.Integration.Controllers
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", AuthTestData.InvalidJwtToken);
 
             // Act
-            var response = await Client.GetAsync("/api/mdfe");
+            // Aponta para um endpoint GET da sua API que requer autorização
+            var response = await Client.GetAsync("/api/mdfe/status-servico/SP");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Unauthorized);
