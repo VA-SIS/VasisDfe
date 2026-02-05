@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
-using Xunit;
+using Xunit; // Importante para IClassFixture
 
-namespace Vasis.MDFe.Api.Tests.Integration
+namespace Vasis.MDFe.Api.Tests.Integration // ✅ Este é o namespace correto
 {
     public abstract class TestBase : IClassFixture<TestWebApplicationFactory>
     {
@@ -19,6 +19,11 @@ namespace Vasis.MDFe.Api.Tests.Integration
         {
             using var scope = Factory.Services.CreateScope();
             return scope.ServiceProvider.GetRequiredService<T>();
+        }
+
+        public void Dispose()
+        {
+            Client?.Dispose();
         }
     }
 }

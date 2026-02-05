@@ -17,17 +17,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="8.0.0" />
     <PackageReference Include="FluentAssertions" Version="6.12.0" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <!-- ✅ Adicionado/Confirmado -->
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Vasis.MDFe.Api\Vasis.MDFe.Api.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Configuration\appsettings.Testing.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
 </Project>
