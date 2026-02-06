@@ -1,0 +1,214 @@
+﻿@page "/evento/incluir-condutor"
+@inject EventoService EventoService
+@inject ISnackbar Snackbar
+
+<PageTitle>Incluir Condutor</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mb-4">👤 Incluir Condutor</MudText>
+    
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Dados do MDFe</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudGrid>
+                <MudItem xs="12" md="8">
+                    <MudTextField @bind-Value="chaveAcesso" 
+                                 Label="Chave de Acesso do MDFe" 
+                                 Variant="Variant.Outlined" 
+                                 MaxLength="44"
+                                 Counter="44"
+                                 Required="true"
+                                 HelperText="Chave de acesso de 44 dígitos do MDFe" />
+                </MudItem>
+                <MudItem xs="12" md="4">
+                    <MudTextField @bind-Value="protocolo" 
+                                 Label="Protocolo de Autorização" 
+                                 Variant="Variant.Outlined" 
+                                 Required="true" />
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+    </MudCard>
+
+    <MudCard Class="mt-4">
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Dados do Condutor</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudGrid>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="nomeCondutor" 
+                                 Label="Nome do Condutor" 
+                                 Variant="Variant.Outlined" 
+                                 Required="true"
+                                 HelperText="Nome completo do condutor" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="cpfCondutor" 
+                                 Label="CPF do Condutor" 
+                                 Variant="Variant.Outlined" 
+                                 MaxLength="14"
+                                 Required="true"
+                                 HelperText="CPF no formato 000.000.000-00" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="numeroHabilitacao" 
+                                 Label="Número da Habilitação" 
+                                 Variant="Variant.Outlined" 
+                                 Required="true"
+                                 HelperText="Número da CNH do condutor" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="categoriaHabilitacao" 
+                                 Label="Categoria da Habilitação" 
+                                 Variant="Variant.Outlined" 
+                                 MaxLength="2"
+                                 Required="true"
+                                 HelperText="Categoria da CNH (ex: D, E)" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudDatePicker @bind-Date="validadeHabilitacao" 
+                                  Label="Validade da Habilitação" 
+                                  Variant="Variant.Outlined"
+                                  Required="true" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField @bind-Value="ufHabilitacao" 
+                                 Label="UF da Habilitação" 
+                                 Variant="Variant.Outlined" 
+                                 MaxLength="2"
+                                 Required="true"
+                                 HelperText="UF onde a CNH foi emitida" />
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" 
+                      Color="Color.Primary" 
+                      OnClick="ExecutarInclusaoCondutor" 
+                      Disabled="@(loading || !FormularioValido())"
+                      StartIcon="Icons.Material.Filled.PersonAdd">
+                @if (loading)
+                {
+                    <MudProgressCircular Size="Size.Small" Indeterminate="true" />
+                    <span class="ml-2">Incluindo...</span>
+                }
+                else
+                {
+                    <span>Incluir Condutor</span>
+                }
+            </MudButton>
+            <MudButton Variant="Variant.Text" 
+                      Color="Color.Secondary" 
+                      OnClick="LimparFormulario"
+                      StartIcon="Icons.Material.Filled.Clear">
+                Limpar
+            </MudButton>
+        </MudCardActions>
+    </MudCard>
+
+    @if (!string.IsNullOrEmpty(resultado))
+    {
+        <MudCard Class="mt-4">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">📋 Resultado da Inclusão</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudAlert Severity="@alertSeverity" Class="mb-3">
+                    @alertMessage
+                </MudAlert>
+                <MudCode>@resultado</MudCode>
+            </MudCardContent>
+        </MudCard>
+    }
+</MudContainer>
+
+@code {
+    private string chaveAcesso = "";
+    private string protocolo = "";
+    private string nomeCondutor = "";
+    private string cpfCondutor = "";
+    private string numeroHabilitacao = "";
+    private string categoriaHabilitacao = "";
+    private DateTime? validadeHabilitacao = DateTime.Today.AddYears(5);
+    private string ufHabilitacao = "";
+    private string resultado = "";
+    private string alertMessage = "";
+    private Severity alertSeverity = Severity.Info;
+    private bool loading = false;
+
+    private bool FormularioValido()
+    {
+        return !string.IsNullOrWhiteSpace(chaveAcesso) && chaveAcesso.Length == 44 &&
+               !string.IsNullOrWhiteSpace(protocolo) &&
+               !string.IsNullOrWhiteSpace(nomeCondutor) &&
+               !string.IsNullOrWhiteSpace(cpfCondutor) &&
+               !string.IsNullOrWhiteSpace(numeroHabilitacao) &&
+               !string.IsNullOrWhiteSpace(categoriaHabilitacao) &&
+               validadeHabilitacao.HasValue &&
+               !string.IsNullOrWhiteSpace(ufHabilitacao) && ufHabilitacao.Length == 2;
+    }
+
+    private async Task ExecutarInclusaoCondutor()
+    {
+        try
+        {
+            loading = true;
+            
+            var eventoData = new
+            {
+                ChaveAcesso = chaveAcesso,
+                Protocolo = protocolo,
+                Condutor = new
+                {
+                    Nome = nomeCondutor,
+                    CPF = cpfCondutor,
+                    NumeroHabilitacao = numeroHabilitacao,
+                    CategoriaHabilitacao = categoriaHabilitacao,
+                    ValidadeHabilitacao = validadeHabilitacao?.ToString("yyyy-MM-dd"),
+                    UFHabilitacao = ufHabilitacao
+                },
+                DataHoraEvento = DateTime.Now
+            };
+
+            resultado = await EventoService.IncluirCondutorAsync(eventoData);
+            
+            alertMessage = "✅ Condutor incluído com sucesso no MDFe!";
+            alertSeverity = Severity.Success;
+            Snackbar.Add("Condutor incluído com sucesso!", Severity.Success);
+        }
+        catch (Exception ex)
+        {
+            alertMessage = $"❌ Erro ao incluir condutor: {ex.Message}";
+            alertSeverity = Severity.Error;
+            resultado = $"Erro: {ex.Message}";
+            Snackbar.Add($"Erro: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private void LimparFormulario()
+    {
+        chaveAcesso = "";
+        protocolo = "";
+        nomeCondutor = "";
+        cpfCondutor = "";
+        numeroHabilitacao = "";
+        categoriaHabilitacao = "";
+        validadeHabilitacao = DateTime.Today.AddYears(5);
+        ufHabilitacao = "";
+        resultado = "";
+        alertMessage = "";
+    }
+}

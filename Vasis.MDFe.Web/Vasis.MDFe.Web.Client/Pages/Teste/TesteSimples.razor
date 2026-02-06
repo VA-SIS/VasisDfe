@@ -1,0 +1,24 @@
+﻿@page "/teste-simples"
+@inject ISnackbar Snackbar
+
+<PageTitle>Teste Simples</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mb-4">🧪 Teste Simples</MudText>
+
+    <MudCard>
+        <MudCardContent>
+            <MudText Typo="Typo.h6">Sistema Funcionando!</MudText>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="TestarSnackbar">
+                Testar Snackbar
+            </MudButton>
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private void TestarSnackbar()
+    {
+        Snackbar.Add("✅ Sistema funcionando corretamente!", Severity.Success);
+    }
+}

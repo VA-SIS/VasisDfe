@@ -1,0 +1,150 @@
+﻿@page "/evento/cancelar"
+@inject EventoService EventoService
+@inject ISnackbar Snackbar
+
+<PageTitle>Cancelar MDFe</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mb-4">❌ Cancelar MDFe</MudText>
+    
+    <MudAlert Severity="Severity.Warning" Class="mb-4">
+        <strong>Atenção:</strong> O cancelamento só é permitido em até 24 horas após a autorização e antes do primeiro evento de encerramento.
+    </MudAlert>
+    
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">Dados para Cancelamento</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudGrid>
+                <MudItem xs="12" md="8">
+                    <MudTextField @bind-Value="chaveAcesso" 
+                                 Label="Chave de Acesso do MDFe" 
+                                 Variant="Variant.Outlined" 
+                                 MaxLength="44"
+                                 Counter="44"
+                                 Required="true"
+                                 HelperText="Chave de acesso de 44 dígitos do MDFe a ser cancelado" />
+                </MudItem>
+                <MudItem xs="12" md="4">
+                    <MudTextField @bind-Value="protocolo" 
+                                 Label="Protocolo de Autorização" 
+                                 Variant="Variant.Outlined" 
+                                 Required="true"
+                                 HelperText="Protocolo de autorização do MDFe" />
+                </MudItem>
+                <MudItem xs="12">
+                    <MudTextField @bind-Value="justificativa" 
+                                 Label="Justificativa para Cancelamento" 
+                                 Variant="Variant.Outlined" 
+                                 Lines="3"
+                                 MaxLength="255"
+                                 Counter="255"
+                                 Required="true"
+                                 HelperText="Justificativa detalhada para o cancelamento (mínimo 15 caracteres)" />
+                </MudItem>
+            </MudGrid>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" 
+                      Color="Color.Error" 
+                      OnClick="ExecutarCancelamento" 
+                      Disabled="@(loading || !FormularioValido())"
+                      StartIcon="Icons.Material.Filled.Cancel">
+                @if (loading)
+                {
+                    <MudProgressCircular Size="Size.Small" Indeterminate="true" />
+                    <span class="ml-2">Cancelando...</span>
+                }
+                else
+                {
+                    <span>Cancelar MDFe</span>
+                }
+            </MudButton>
+            <MudButton Variant="Variant.Text" 
+                      Color="Color.Secondary" 
+                      OnClick="LimparFormulario"
+                      StartIcon="Icons.Material.Filled.Clear">
+                Limpar
+            </MudButton>
+        </MudCardActions>
+    </MudCard>
+
+    @if (!string.IsNullOrEmpty(resultado))
+    {
+        <MudCard Class="mt-4">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">📋 Resultado do Cancelamento</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudAlert Severity="@alertSeverity" Class="mb-3">
+                    @alertMessage
+                </MudAlert>
+                <MudCode>@resultado</MudCode>
+            </MudCardContent>
+        </MudCard>
+    }
+</MudContainer>
+
+@code {
+    private string chaveAcesso = "";
+    private string protocolo = "";
+    private string justificativa = "";
+    private string resultado = "";
+    private string alertMessage = "";
+    private Severity alertSeverity = Severity.Info;
+    private bool loading = false;
+
+    private bool FormularioValido()
+    {
+        return !string.IsNullOrWhiteSpace(chaveAcesso) && chaveAcesso.Length == 44 &&
+               !string.IsNullOrWhiteSpace(protocolo) &&
+               !string.IsNullOrWhiteSpace(justificativa) && justificativa.Length >= 15;
+    }
+
+    private async Task ExecutarCancelamento()
+    {
+        try
+        {
+            loading = true;
+            
+            var eventoData = new
+            {
+                ChaveAcesso = chaveAcesso,
+                Protocolo = protocolo,
+                Justificativa = justificativa,
+                DataHoraEvento = DateTime.Now
+            };
+
+            resultado = await EventoService.CancelarMDFeAsync(eventoData);
+            
+            alertMessage = "✅ Evento de cancelamento registrado com sucesso!";
+            alertSeverity = Severity.Success;
+            Snackbar.Add("MDFe cancelado com sucesso!", Severity.Success);
+        }
+        catch (Exception ex)
+        {
+            alertMessage = $"❌ Erro ao cancelar MDFe: {ex.Message}";
+            alertSeverity = Severity.Error;
+            resultado = $"Erro: {ex.Message}";
+            Snackbar.Add($"Erro: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private void LimparFormulario()
+    {
+        chaveAcesso = "";
+        protocolo = "";
+        justificativa = "";
+        resultado = "";
+        alertMessage = "";
+    }
+}

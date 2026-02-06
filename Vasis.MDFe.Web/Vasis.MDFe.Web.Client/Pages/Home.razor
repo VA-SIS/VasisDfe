@@ -1,58 +1,152 @@
 ﻿@page "/"
+@using MudBlazor
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Home - Vasis MDFe Web</PageTitle>
 
-<MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
-<MudText Class="mb-8">Welcome to your new app, powered by MudBlazor and the .NET 8 Template!</MudText>
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">
+        🚛 Bem-vindo ao Vasis MDFe Web
+    </MudText>
 
-<MudAlert Severity="Severity.Normal">
-    You can find documentation and examples on our website here:
-    <MudLink Href="https://mudblazor.com" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        <b>www.mudblazor.com</b>
-    </MudLink>
-</MudAlert>
+    <MudText Typo="Typo.h6" Align="Align.Center" Class="mb-8">
+        Sistema completo para gestão de Manifesto Eletrônico de Documentos Fiscais
+    </MudText>
 
-<br />
-<MudText Typo="Typo.h5" GutterBottom="true">Interactivity in this Template</MudText>
-<br />
-<MudText Typo="Typo.body2">
-    When you opt for the "Global" Interactivity Location, <br />
-    the render modes are defined in App.razor and consequently apply to all child components.<br />
-    In this case, providers are globally set in the MainLayout.<br />
-    <br />
-    On the other hand, if you choose the "Per page/component" Interactivity Location,<br />
-    it is necessary to include the <br />
-    <br />
-    &lt;MudPopoverProvider /&gt; <br />
-    &lt;MudDialogProvider /&gt; <br />
-    &lt;MudSnackbarProvider /&gt; <br />
-    <br />
-    components on every interactive page.<br />
-    <br />
-    If a render mode is not specified for a page, it defaults to Server-Side Rendering (SSR),<br />
-    similar to this page. While MudBlazor allows pages to be rendered in SSR,<br />
-    please note that interactive features, such as buttons and dropdown menus, will not be functional.
-</MudText>
+    <MudGrid>
+        <!-- Card MDFe -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Description" Size="Size.Large" Color="Color.Primary" />
+                        <MudText Typo="Typo.h6" Class="mt-2">MDFe</MudText>
+                        <MudText Typo="Typo.body2">
+                            Criar, validar, assinar e transmitir manifestos eletrônicos
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/mdfe/criar">
+                        Começar
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
 
-<br />
-<MudText Typo="Typo.h5" GutterBottom="true">What's New in Blazor with the Release of .NET 8</MudText>
-<br />
-<MudText Typo="Typo.h6" GutterBottom="true">Prerendering</MudText>
-<MudText Typo="Typo.body2" GutterBottom="true">
-    If you're exploring the features of .NET 8 Blazor,<br /> you might be pleasantly surprised to learn that each page is prerendered on the server,<br /> regardless of the selected render mode.<br /><br />
-    This means that you'll need to inject all necessary services on the server,<br /> even when opting for the wasm (WebAssembly) render mode.<br /><br />
-    This prerendering functionality is crucial to ensuring that WebAssembly mode feels fast and responsive,<br /> especially when it comes to initial page load times.<br /><br />
-    For more information on how to detect prerendering and leverage the RenderContext, you can refer to the following link:
-    <MudLink Href="https://github.com/dotnet/aspnetcore/issues/51468#issuecomment-1783568121" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        More details
-    </MudLink>
-</MudText>
+        <!-- Card Eventos -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Event" Size="Size.Large" Color="Color.Secondary" />
+                        <MudText Typo="Typo.h6" Class="mt-2">Eventos</MudText>
+                        <MudText Typo="Typo.body2">
+                            Gerenciar eventos do MDFe como encerramento e cancelamento
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Secondary" Href="/evento/encerrar">
+                        Acessar
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
 
-<br />
-<MudText Typo="Typo.h6" GutterBottom="true">InteractiveAuto</MudText>
-<MudText Typo="Typo.body2">
-    A discussion on how to achieve this can be found here:
-    <MudLink Href="https://github.com/dotnet/aspnetcore/issues/51468#issue-1950424116" Target="_blank" Typo="Typo.body2" Color="Color.Primary">
-        More details
-    </MudLink>
-</MudText>
+        <!-- Card Configurações -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Settings" Size="Size.Large" Color="Color.Tertiary" />
+                        <MudText Typo="Typo.h6" Class="mt-2">Configurações</MudText>
+                        <MudText Typo="Typo.body2">
+                            Configurar certificados, web services e parâmetros do sistema
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Tertiary" Href="/config/geral">
+                        Configurar
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <!-- Card Relatórios -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Assessment" Size="Size.Large" Color="Color.Info" />
+                        <MudText Typo="Typo.h6" Class="mt-2">Relatórios</MudText>
+                        <MudText Typo="Typo.body2">
+                            Visualizar relatórios de MDFe e eventos processados
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Info" Href="/relatorio/mdfe">
+                        Ver Relatórios
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <!-- Card Ferramentas -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Build" Size="Size.Large" Color="Color.Warning" />
+                        <MudText Typo="Typo.h6" Class="mt-2">Ferramentas</MudText>
+                        <MudText Typo="Typo.body2">
+                            Visualizador XML, teste de conexão e logs do sistema
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Warning" Href="/ferramenta/xml-viewer">
+                        Ferramentas
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+
+        <!-- Card Teste -->
+        <MudItem xs="12" md="6" lg="4">
+            <MudCard Elevation="2" Class="pa-4">
+                <MudCardContent>
+                    <div style="text-align: center;">
+                        <MudIcon Icon="Icons.Material.Filled.Science" Size="Size.Large" Color="Color.Success" />
+                        <MudText Typo="Typo.h6" Class="mt-2">Teste Integração</MudText>
+                        <MudText Typo="Typo.body2">
+                            Testar conectividade e integração com a API
+                        </MudText>
+                    </div>
+                </MudCardContent>
+                <MudCardActions Class="justify-center">
+                    <MudButton Variant="Variant.Filled" Color="Color.Success" Href="/teste/integracao">
+                        Testar
+                    </MudButton>
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+
+    <!-- Informações do Sistema -->
+    <MudPaper Class="pa-4 mt-8" Elevation="1">
+        <MudText Typo="Typo.h6" GutterBottom="true">📊 Status do Sistema</MudText>
+        <MudGrid>
+            <MudItem xs="12" md="4">
+                <MudText><strong>Versão:</strong> 1.0.0</MudText>
+            </MudItem>
+            <MudItem xs="12" md="4">
+                <MudText><strong>Framework:</strong> .NET 8</MudText>
+            </MudItem>
+            <MudItem xs="12" md="4">
+                <MudText><strong>UI:</strong> MudBlazor</MudText>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+</MudContainer>

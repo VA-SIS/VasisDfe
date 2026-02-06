@@ -1,0 +1,32 @@
+﻿@page "/evento/incluir-df"
+@inject EventoService EventoService
+@inject ISnackbar Snackbar
+
+<PageTitle>Incluir DF-e</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mb-4">📄 Incluir DF-e</MudText>
+
+    <MudCard>
+        <MudCardContent>
+            <MudText Typo="Typo.h6">Em desenvolvimento...</MudText>
+            <MudText>Esta funcionalidade será implementada em breve.</MudText>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       OnClick="VoltarHome"
+                       StartIcon="Icons.Material.Filled.Home">
+                Voltar ao Início
+            </MudButton>
+        </MudCardActions>
+    </MudCard>
+</MudContainer>
+
+@code {
+    private void VoltarHome()
+    {
+        Snackbar.Add("Redirecionando para o início...", Severity.Info);
+        // Navigation.NavigateTo("/");
+    }
+}

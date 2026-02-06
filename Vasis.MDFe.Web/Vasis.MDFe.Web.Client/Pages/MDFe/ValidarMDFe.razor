@@ -1,0 +1,122 @@
+﻿@page "/mdfe/validar"
+@inject MDFeService MDFeService
+@inject ISnackbar Snackbar
+
+<PageTitle>Validar MDFe</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large">
+    <MudText Typo="Typo.h4" Class="mb-4">✅ Validar MDFe</MudText>
+    
+    <MudCard>
+        <MudCardHeader>
+            <CardHeaderContent>
+                <MudText Typo="Typo.h6">XML do Manifesto</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudTextField @bind-Value="xmlMDFe" 
+                         Label="XML do MDFe" 
+                         Variant="Variant.Outlined" 
+                         Lines="15"
+                         FullWidth="true"
+                         Placeholder="Cole aqui o XML do MDFe para validação..."
+                         HelperText="Insira o XML completo do MDFe que deseja validar" />
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" 
+                      Color="Color.Primary" 
+                      OnClick="ExecutarValidarMDFe" 
+                      Disabled="@(loading || string.IsNullOrWhiteSpace(xmlMDFe))"
+                      StartIcon="Icons.Material.Filled.CheckCircle">
+                @if (loading)
+                {
+                    <MudProgressCircular Size="Size.Small" Indeterminate="true" />
+                    <span class="ml-2">Validando...</span>
+                }
+                else
+                {
+                    <span>Validar MDFe</span>
+                }
+            </MudButton>
+            <MudButton Variant="Variant.Text" 
+                      Color="Color.Secondary" 
+                      OnClick="LimparXML"
+                      StartIcon="Icons.Material.Filled.Clear">
+                Limpar
+            </MudButton>
+        </MudCardActions>
+    </MudCard>
+
+    @if (!string.IsNullOrEmpty(resultado))
+    {
+        <MudCard Class="mt-4">
+            <MudCardHeader>
+                <CardHeaderContent>
+                    <MudText Typo="Typo.h6">📋 Resultado da Validação</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudAlert Severity="@alertSeverity" Class="mb-3">
+                    @alertMessage
+                </MudAlert>
+                <MudCode>@resultado</MudCode>
+            </MudCardContent>
+        </MudCard>
+    }
+</MudContainer>
+
+@code {
+    private string xmlMDFe = "";
+    private string resultado = "";
+    private string alertMessage = "";
+    private Severity alertSeverity = Severity.Info;
+    private bool loading = false;
+
+    private async Task ExecutarValidarMDFe()
+    {
+        try
+        {
+            loading = true;
+            resultado = await MDFeService.ValidarMDFeAsync(xmlMDFe);
+            
+            if (resultado.Contains("válido", StringComparison.OrdinalIgnoreCase) || 
+                resultado.Contains("success", StringComparison.OrdinalIgnoreCase))
+            {
+                alertMessage = "✅ MDFe validado com sucesso!";
+                alertSeverity = Severity.Success;
+                Snackbar.Add("Validação concluída com sucesso!", Severity.Success);
+            }
+            else if (resultado.Contains("erro", StringComparison.OrdinalIgnoreCase) || 
+                     resultado.Contains("error", StringComparison.OrdinalIgnoreCase))
+            {
+                alertMessage = "❌ Foram encontrados erros na validação do MDFe.";
+                alertSeverity = Severity.Error;
+                Snackbar.Add("Erros encontrados na validação!", Severity.Error);
+            }
+            else
+            {
+                alertMessage = "ℹ️ Validação concluída. Verifique os detalhes abaixo.";
+                alertSeverity = Severity.Info;
+                Snackbar.Add("Validação concluída!", Severity.Info);
+            }
+        }
+        catch (Exception ex)
+        {
+            alertMessage = $"❌ Erro durante a validação: {ex.Message}";
+            alertSeverity = Severity.Error;
+            resultado = $"Erro: {ex.Message}";
+            Snackbar.Add($"Erro: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            loading = false;
+        }
+    }
+
+    private void LimparXML()
+    {
+        xmlMDFe = "";
+        resultado = "";
+        alertMessage = "";
+    }
+}
