@@ -135,6 +135,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api", "Vasis.MDF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api.Tests", "Vasis.MDFe.Api.Tests\Vasis.MDFe.Api.Tests.csproj", "{65E44936-9D80-0291-411B-12D97500E385}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Web", "Vasis.MDFe.Web\Vasis.MDFe.Web\Vasis.MDFe.Web.csproj", "{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Web.Client", "Vasis.MDFe.Web\Vasis.MDFe.Web.Client\Vasis.MDFe.Web.Client.csproj", "{7EFDF490-48A1-4149-AC79-777CD3A159E8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -543,6 +547,22 @@ Global
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.ActiveCfg = Release|Any CPU
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.Build.0 = Release|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Debug|x86.Build.0 = Debug|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Release|x86.ActiveCfg = Release|Any CPU
+		{A21DADB4-2077-4A8A-8A0F-00AB6B5EEA74}.Release|x86.Build.0 = Release|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Debug|x86.Build.0 = Debug|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Release|x86.ActiveCfg = Release|Any CPU
+		{7EFDF490-48A1-4149-AC79-777CD3A159E8}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
