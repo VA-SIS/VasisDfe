@@ -1,44 +1,76 @@
-﻿@using MudBlazor
-@inherits LayoutView
-@inject IJSRuntime JSRuntime
+﻿@inherits LayoutView
+@using MudBlazor
 
 <MudThemeProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
 
-<MudLayout>
-    <MudAppBar Elevation="1">
-        <MudIconButton Icon="Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudSpacer />
-        <MudText Typo="Typo.h6">Vasis MDFe API</MudText>
-        <MudSpacer />
-        <MudIconButton Icon="Icons.Material.Filled.Brightness4" Color="Color.Inherit" OnClick="@ToggleDarkMode" />
-    </MudAppBar>
-
-    <MudDrawer @bind-Open="_drawerOpen" Elevation="1">
-        <MudDrawerHeader>
-            <MudText Typo="Typo.h6">📋 Menu</MudText>
-        </MudDrawerHeader>
+<div class="page">
+    <div class="sidebar">
         <NavMenu />
-    </MudDrawer>
+    </div>
 
-    <MudMainContent>
-        <MudContainer MaxWidth="MaxWidth.Large" Class="my-16 pt-16">
+    <main>
+        <div class="top-row px-4">
+            <h3>🚛 Vasis MDFe Client</h3>
+        </div>
+
+        <article class="content px-4">
             @Body
-        </MudContainer>
-    </MudMainContent>
-</MudLayout>
+        </article>
+    </main>
+</div>
 
-@code {
-    bool _drawerOpen = true;
-
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
+<style>
+    .page {
+        position: relative;
+        display: flex;
+        flex-direction: column;
     }
 
-    private async Task ToggleDarkMode()
-    {
-        await JSRuntime.InvokeVoidAsync("console.log", "Toggle dark mode");
+    main {
+        flex: 1;
     }
-}
+
+    .sidebar {
+        background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    }
+
+    .top-row {
+        background-color: #f7f7f7;
+        border-bottom: 1px solid #d6d5d5;
+        justify-content: flex-end;
+        height: 3.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .content {
+        padding-top: 1.1rem;
+    }
+
+    @media (max-width: 640.98px) {
+        .top-row:not(.auth) {
+            display: none;
+        }
+    }
+
+    @media (min-width: 641px) {
+        .page {
+            flex-direction: row;
+        }
+
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .top-row {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+    }
+</style>
