@@ -135,6 +135,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api", "Vasis.MDF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Api.Tests", "Vasis.MDFe.Api.Tests\Vasis.MDFe.Api.Tests.csproj", "{65E44936-9D80-0291-411B-12D97500E385}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.WebMudBlazor", "Vasis.MDFe.WebMudBlazor\Vasis.MDFe.WebMudBlazor\Vasis.MDFe.WebMudBlazor.csproj", "{5F05D0C3-F488-45B2-9920-405E046A1BC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.WebMudBlazor.Client", "Vasis.MDFe.WebMudBlazor\Vasis.MDFe.WebMudBlazor.Client\Vasis.MDFe.WebMudBlazor.Client.csproj", "{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -543,6 +547,22 @@ Global
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.ActiveCfg = Release|Any CPU
 		{65E44936-9D80-0291-411B-12D97500E385}.Release|x86.Build.0 = Release|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Debug|x86.Build.0 = Debug|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Release|x86.ActiveCfg = Release|Any CPU
+		{5F05D0C3-F488-45B2-9920-405E046A1BC8}.Release|x86.Build.0 = Release|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Debug|x86.Build.0 = Debug|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Release|x86.ActiveCfg = Release|Any CPU
+		{C5B811B3-6D43-47A5-A866-5F5AA35CDD21}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
