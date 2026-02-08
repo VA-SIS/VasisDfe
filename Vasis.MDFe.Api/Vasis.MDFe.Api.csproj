@@ -39,9 +39,14 @@
     <ProjectReference Include="..\MDFe.Servicos\MDFe.Servicos.csproj" />
     <ProjectReference Include="..\MDFe.Utils\MDFe.Utils.csproj" />
     <ProjectReference Include="..\MDFe.Wsdl\MDFe.Wsdl.csproj" />
+    <ProjectReference Include="..\Vasis.MDFe.Configuration\Vasis.MDFe.Configuration.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="XMLsGerados_TEST\" />
+    <Folder Include="Schemas_TEST\" />
+    <Folder Include="XMLsGerados_DEV\" />
+    <Folder Include="Schemas_DEV\" />
     <Folder Include="XMLsGerados" />
     <Folder Include="Schemas" />
   </ItemGroup>
