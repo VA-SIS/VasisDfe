@@ -1,8 +1,10 @@
-﻿
+﻿@* Vasis.MDFe.WebMudBlazor.Client/Layout/NavMenu.razor *@
 <MudNavMenu>
     <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Icons.Material.Filled.Home">Home</MudNavLink>
-    <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Add">Counter</MudNavLink>
-    <MudNavLink Href="weather" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.List">Weather</MudNavLink>
+    <MudNavLink Href="mdfe-config-status" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.SettingsApplications">Status MDFe Config</MudNavLink>
+
+    @* Outros links que o MudBlazor gera por padrão *@
+    <MudNavLink Href="counter" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Numbers">Counter</MudNavLink>
+    <MudNavLink Href="weather" Match="NavLinkMatch.Prefix" Icon="@Icons.Material.Filled.Cloud">Weather</MudNavLink>
+
 </MudNavMenu>
-
-

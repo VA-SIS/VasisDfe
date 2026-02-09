@@ -2,7 +2,7 @@
 @using Vasis.MDFe.Common.Models
 @using Vasis.MDFe.WebMudBlazor.Client.Services
 @inject MdfeConfigApiClient MdfeApiClient
-@inject ISnackbar Snackbar
+@inject ISnackbar Snackbar // Para exibir mensagens de notificação do MudBlazor
 
 <MudText Typo="Typo.h5" Class="mb-4">Status da Configuração do MDF-e</MudText>
 
@@ -13,7 +13,7 @@
 }
 else if (_configStatus == null)
 {
-    <MudAlert Severity="Severity.Error">Não foi possível carregar o status da configuração do MDF-e. Verifique se a API está online e configurada corretamente.</MudAlert>
+    <MudAlert Severity="Severity.Error" Class="mt-4">Não foi possível carregar o status da configuração do MDF-e. Verifique se a API está online e configurada corretamente.</MudAlert>
 }
 else
 {
@@ -21,14 +21,16 @@ else
         <MudText Typo="Typo.h6" GutterBottom="true">Status Geral:</MudText>
         <MudText Typo="Typo.body1">
             Configuração Válida:
-            <MudChip T="object" Color="@(_configStatus.MdfeConfigIsValid? Color.Success: Color.Error)"  Icon="@(_configStatus.MdfeConfigIsValid ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Error)">
-            @(_configStatus.MdfeConfigIsValid ? "Sim" : "Não")
-        </MudChip>
+            @* Adicionado T="object" para ajudar o MudChip a inferir o tipo, corrigindo o erro de compilação. *@
+            <MudChip T="object" Color="@(_configStatus.MdfeConfigIsValid? Color.Success: Color.Error)"
+                     Icon="@(_configStatus.MdfeConfigIsValid ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Error)">
+                @(_configStatus.MdfeConfigIsValid ? "Sim" : "Não")
+            </MudChip>
         </MudText>
     </MudPaper>
 
-    <MudExpansionPanels Class="mt-4">
-        <MudExpansionPanel Text="Certificado Digital">
+    <MudExpansionPanels Class="mt-4" MultiExpansion="true">
+        <MudExpansionPanel Text="Certificado Digital" IsExpanded="true">
             <MudText Typo="Typo.body2">Usa Windows Store: @_configStatus.CertificadoDigital.UsaWindowsStore</MudText>
             @if (_configStatus.CertificadoDigital.UsaWindowsStore)
             {
@@ -44,12 +46,16 @@ else
             }
         </MudExpansionPanel>
 
-        <MudExpansionPanel Text="Empresa Emitente">
+        <MudExpansionPanel Text="Empresa Emitente" IsExpanded="true">
             <MudText Typo="Typo.body2">CNPJ: @_configStatus.EmpresaEmitente.CNPJ</MudText>
             <MudText Typo="Typo.body2">IE: @_configStatus.EmpresaEmitente.InscricaoEstadual</MudText>
             <MudText Typo="Typo.body2">Razão Social: @_configStatus.EmpresaEmitente.RazaoSocial</MudText>
             <MudText Typo="Typo.body2">Nome Fantasia: @_configStatus.EmpresaEmitente.NomeFantasia</MudText>
             <MudText Typo="Typo.body2">Endereço: @_configStatus.EmpresaEmitente.EnderecoLogradouro, @_configStatus.EmpresaEmitente.EnderecoNumero</MudText>
+            @if (!string.IsNullOrWhiteSpace(_configStatus.EmpresaEmitente.EnderecoComplemento))
+            {
+                <MudText Typo="Typo.body2">Complemento: @_configStatus.EmpresaEmitente.EnderecoComplemento</MudText>
+            }
             <MudText Typo="Typo.body2">Bairro: @_configStatus.EmpresaEmitente.EnderecoBairro, Município: @_configStatus.EmpresaEmitente.EnderecoNomeMunicipio (@_configStatus.EmpresaEmitente.EnderecoUF)</MudText>
             <MudText Typo="Typo.body2">CEP: @_configStatus.EmpresaEmitente.EnderecoCEP</MudText>
             <MudText Typo="Typo.body2">Telefone: @_configStatus.EmpresaEmitente.Telefone</MudText>
@@ -57,7 +63,7 @@ else
             <MudText Typo="Typo.body2">RNTRC: @_configStatus.EmpresaEmitente.RNTRC</MudText>
         </MudExpansionPanel>
 
-        <MudExpansionPanel Text="Sistema DFe">
+        <MudExpansionPanel Text="Sistema DFe" IsExpanded="true">
             <MudText Typo="Typo.body2">Tipo Ambiente: @_configStatus.SistemaDFe.TipoAmbiente</MudText>
             <MudText Typo="Typo.body2">Versão Layout MDFe: @_configStatus.SistemaDFe.VersaoLayoutMDFe</MudText>
             <MudText Typo="Typo.body2">Pasta Schemas: @_configStatus.SistemaDFe.PastaSchemas (Caminho Completo: @_configStatus.SistemaDFe.CaminhoCompletoSchemas)</MudText>
@@ -80,7 +86,15 @@ else
             _configStatus = await MdfeApiClient.GetMdfeConfigurationStatus();
             if (_configStatus == null)
             {
-                Snackbar.Add("Falha ao obter o status da configuração do MDF-e.", Severity.Error);
+                Snackbar.Add("Falha ao obter o status da configuração do MDF-e. Verifique se a API está online e configurada corretamente.", Severity.Error);
+            }
+            else if (!_configStatus.MdfeConfigIsValid)
+            {
+                Snackbar.Add("A configuração do MDF-e não é válida. Verifique os detalhes abaixo.", Severity.Warning);
+            }
+            else
+            {
+                Snackbar.Add("Status da configuração do MDF-e carregado com sucesso.", Severity.Success);
             }
         }
         catch (Exception ex)
