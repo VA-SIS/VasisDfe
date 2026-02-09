@@ -1,0 +1,96 @@
+﻿@page "/mdfe-config-status"
+@using Vasis.MDFe.Common.Models
+@using Vasis.MDFe.WebMudBlazor.Client.Services
+@inject MdfeConfigApiClient MdfeApiClient
+@inject ISnackbar Snackbar
+
+<MudText Typo="Typo.h5" Class="mb-4">Status da Configuração do MDF-e</MudText>
+
+@if (_loading)
+{
+    <MudProgressCircular Indeterminate="true" Color="Color.Primary" />
+    <MudText Typo="Typo.body2">Carregando status da configuração...</MudText>
+}
+else if (_configStatus == null)
+{
+    <MudAlert Severity="Severity.Error">Não foi possível carregar o status da configuração do MDF-e. Verifique se a API está online e configurada corretamente.</MudAlert>
+}
+else
+{
+    <MudPaper Class="pa-4 mt-4" Elevation="2">
+        <MudText Typo="Typo.h6" GutterBottom="true">Status Geral:</MudText>
+        <MudText Typo="Typo.body1">
+            Configuração Válida:
+            <MudChip T="object" Color="@(_configStatus.MdfeConfigIsValid? Color.Success: Color.Error)"  Icon="@(_configStatus.MdfeConfigIsValid ? Icons.Material.Filled.CheckCircle : Icons.Material.Filled.Error)">
+            @(_configStatus.MdfeConfigIsValid ? "Sim" : "Não")
+        </MudChip>
+        </MudText>
+    </MudPaper>
+
+    <MudExpansionPanels Class="mt-4">
+        <MudExpansionPanel Text="Certificado Digital">
+            <MudText Typo="Typo.body2">Usa Windows Store: @_configStatus.CertificadoDigital.UsaWindowsStore</MudText>
+            @if (_configStatus.CertificadoDigital.UsaWindowsStore)
+            {
+                <MudText Typo="Typo.body2">Thumbprint: @_configStatus.CertificadoDigital.Thumbprint</MudText>
+                <MudText Typo="Typo.body2">Store Location: @_configStatus.CertificadoDigital.StoreLocation</MudText>
+                <MudText Typo="Typo.body2">Store Name: @_configStatus.CertificadoDigital.StoreName</MudText>
+            }
+            else
+            {
+                <MudText Typo="Typo.body2">Nome Arquivo: @_configStatus.CertificadoDigital.NomeArquivoCertificado</MudText>
+                <MudText Typo="Typo.body2">Caminho Completo: @_configStatus.CertificadoDigital.CaminhoCompletoArquivo</MudText>
+                <MudText Typo="Typo.body2">Senha Presente: @_configStatus.CertificadoDigital.SenhaPresente</MudText>
+            }
+        </MudExpansionPanel>
+
+        <MudExpansionPanel Text="Empresa Emitente">
+            <MudText Typo="Typo.body2">CNPJ: @_configStatus.EmpresaEmitente.CNPJ</MudText>
+            <MudText Typo="Typo.body2">IE: @_configStatus.EmpresaEmitente.InscricaoEstadual</MudText>
+            <MudText Typo="Typo.body2">Razão Social: @_configStatus.EmpresaEmitente.RazaoSocial</MudText>
+            <MudText Typo="Typo.body2">Nome Fantasia: @_configStatus.EmpresaEmitente.NomeFantasia</MudText>
+            <MudText Typo="Typo.body2">Endereço: @_configStatus.EmpresaEmitente.EnderecoLogradouro, @_configStatus.EmpresaEmitente.EnderecoNumero</MudText>
+            <MudText Typo="Typo.body2">Bairro: @_configStatus.EmpresaEmitente.EnderecoBairro, Município: @_configStatus.EmpresaEmitente.EnderecoNomeMunicipio (@_configStatus.EmpresaEmitente.EnderecoUF)</MudText>
+            <MudText Typo="Typo.body2">CEP: @_configStatus.EmpresaEmitente.EnderecoCEP</MudText>
+            <MudText Typo="Typo.body2">Telefone: @_configStatus.EmpresaEmitente.Telefone</MudText>
+            <MudText Typo="Typo.body2">Email: @_configStatus.EmpresaEmitente.Email</MudText>
+            <MudText Typo="Typo.body2">RNTRC: @_configStatus.EmpresaEmitente.RNTRC</MudText>
+        </MudExpansionPanel>
+
+        <MudExpansionPanel Text="Sistema DFe">
+            <MudText Typo="Typo.body2">Tipo Ambiente: @_configStatus.SistemaDFe.TipoAmbiente</MudText>
+            <MudText Typo="Typo.body2">Versão Layout MDFe: @_configStatus.SistemaDFe.VersaoLayoutMDFe</MudText>
+            <MudText Typo="Typo.body2">Pasta Schemas: @_configStatus.SistemaDFe.PastaSchemas (Caminho Completo: @_configStatus.SistemaDFe.CaminhoCompletoSchemas)</MudText>
+            <MudText Typo="Typo.body2">Pasta Salvar XML: @_configStatus.SistemaDFe.PastaSalvarXml (Caminho Completo: @_configStatus.SistemaDFe.CaminhoCompletoSalvarXml)</MudText>
+            <MudText Typo="Typo.body2">Salvar XML: @_configStatus.SistemaDFe.IsSalvarXml</MudText>
+            <MudText Typo="Typo.body2">Timeout (ms): @_configStatus.SistemaDFe.TimeOutServicoMs</MudText>
+            <MudText Typo="Typo.body2">UF Emitente: @_configStatus.SistemaDFe.UFEmitente</MudText>
+        </MudExpansionPanel>
+    </MudExpansionPanels>
+}
+
+@code {
+    private MdfeConfigStatusDto? _configStatus;
+    private bool _loading = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _configStatus = await MdfeApiClient.GetMdfeConfigurationStatus();
+            if (_configStatus == null)
+            {
+                Snackbar.Add("Falha ao obter o status da configuração do MDF-e.", Severity.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar configurações: {ex.Message}");
+            Snackbar.Add($"Erro ao carregar configurações: {ex.Message}", Severity.Error);
+        }
+        finally
+        {
+            _loading = false;
+        }
+    }
+}
