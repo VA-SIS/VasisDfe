@@ -39,6 +39,7 @@
     <ProjectReference Include="..\MDFe.Servicos\MDFe.Servicos.csproj" />
     <ProjectReference Include="..\MDFe.Utils\MDFe.Utils.csproj" />
     <ProjectReference Include="..\MDFe.Wsdl\MDFe.Wsdl.csproj" />
+    <ProjectReference Include="..\Vasis.MDFe.Common\Vasis.MDFe.Common.csproj" />
     <ProjectReference Include="..\Vasis.MDFe.Configuration\Vasis.MDFe.Configuration.csproj" />
   </ItemGroup>
 

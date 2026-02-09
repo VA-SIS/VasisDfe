@@ -141,6 +141,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.WebMudBlazor.Cli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Configuration", "Vasis.MDFe.Configuration\Vasis.MDFe.Configuration.csproj", "{0998BBD8-BE5F-42B6-9497-F8280CD05317}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vasis.MDFe.Common", "Vasis.MDFe.Common\Vasis.MDFe.Common.csproj", "{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -573,6 +575,14 @@ Global
 		{0998BBD8-BE5F-42B6-9497-F8280CD05317}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0998BBD8-BE5F-42B6-9497-F8280CD05317}.Release|x86.ActiveCfg = Release|Any CPU
 		{0998BBD8-BE5F-42B6-9497-F8280CD05317}.Release|x86.Build.0 = Release|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Debug|x86.Build.0 = Debug|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Release|x86.ActiveCfg = Release|Any CPU
+		{63E728CB-DC2A-4BAD-9EAC-7ADF8AC0F316}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
