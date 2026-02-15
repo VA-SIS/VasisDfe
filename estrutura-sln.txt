@@ -6,7 +6,6 @@ C:.
 ¦   cd.sln
 ¦   CONTRIBUTING.md
 ¦   estrutura-sln.txt
-¦   estrutura.txt
 ¦   LICENSE
 ¦   README.md
 ¦   Zeus NFe.sln
@@ -7932,6 +7931,11 @@ C:.
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0bjwipvt_wpftmp.assets.cache
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0bjwipvt_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0bjwipvt_wpftmp.sourcelink.json
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0d2jdx2d_wpftmp.AssemblyInfo.cs
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0d2jdx2d_wpftmp.AssemblyInfoInputs.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0d2jdx2d_wpftmp.assets.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0d2jdx2d_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0d2jdx2d_wpftmp.sourcelink.json
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0lwfglev_wpftmp.AssemblyInfo.cs
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0lwfglev_wpftmp.AssemblyInfoInputs.cache
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_0lwfglev_wpftmp.assets.cache
@@ -8033,6 +8037,11 @@ C:.
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_2zzzon5c_wpftmp.csproj.BuildWithSkipAnalyzers
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_2zzzon5c_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_2zzzon5c_wpftmp.sourcelink.json
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_34kfuihv_wpftmp.AssemblyInfo.cs
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_34kfuihv_wpftmp.AssemblyInfoInputs.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_34kfuihv_wpftmp.assets.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_34kfuihv_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_34kfuihv_wpftmp.sourcelink.json
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_35nvp10y_wpftmp.AssemblyInfo.cs
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_35nvp10y_wpftmp.AssemblyInfoInputs.cache
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_35nvp10y_wpftmp.assets.cache
@@ -8501,6 +8510,11 @@ C:.
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mk0joyhu_wpftmp.assets.cache
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mk0joyhu_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mk0joyhu_wpftmp.sourcelink.json
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mln0yfb3_wpftmp.AssemblyInfo.cs
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mln0yfb3_wpftmp.AssemblyInfoInputs.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mln0yfb3_wpftmp.assets.cache
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mln0yfb3_wpftmp.GeneratedMSBuildEditorConfig.editorconfig
+¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mln0yfb3_wpftmp.sourcelink.json
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mlzjhfnv_wpftmp.AssemblyInfo.cs
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mlzjhfnv_wpftmp.AssemblyInfoInputs.cache
 ¦       ¦       ¦   NFe.Danfe.App.Teste.Html_mlzjhfnv_wpftmp.assets.cache
@@ -14699,10 +14713,11 @@ C:.
 ¦   +---Schemas_DEV
 ¦   +---Schemas_TEST
 ¦   +---Services
-¦   ¦       Interfaces.cs
-¦   ¦       MDFeLifecycleService.cs
-¦   ¦       MDFeValidationService.cs
-¦   ¦       
+¦   ¦   ¦   Interfaces.cs
+¦   ¦   ¦   MDFeLifecycleService.cs
+¦   ¦   ¦   MDFeValidationService.cs
+¦   ¦   ¦   
+¦   ¦   +---Interface
 ¦   +---XMLsGerados
 ¦   +---XMLsGerados_DEV
 ¦   +---XMLsGerados_TEST
@@ -17641,7 +17656,7 @@ C:.
         ¦   ¦       ¦       2ivsyumc2c-{0}-slz3b0j8c6-slz3b0j8c6.gz
         ¦   ¦       ¦       31sqetfn9a-{0}-ipb32ntuf2-ipb32ntuf2.gz
         ¦   ¦       ¦       3c0cbh148z-{0}-ve8hs0zdbq-ve8hs0zdbq.gz
-        ¦   ¦       ¦       3g7z6550o2-{0}-8ogmgwcooq-8ogmgwcooq.gz
+        ¦   ¦       ¦       3g7z6550o2-{0}-8qf5b9tbs3-8qf5b9tbs3.gz
         ¦   ¦       ¦       3jbjlh13jg-{0}-l1pdphn474-l1pdphn474.gz
         ¦   ¦       ¦       3nex6bjecc-{0}-b7spknc6ws-b7spknc6ws.gz
         ¦   ¦       ¦       3nrviqw64z-{0}-9ale5evjgj-9ale5evjgj.gz
@@ -17681,7 +17696,7 @@ C:.
         ¦   ¦       ¦       8are035727-{0}-7qb41zkxvy-7qb41zkxvy.gz
         ¦   ¦       ¦       8f1twe5yyk-{0}-7v9cvjbiib-7v9cvjbiib.gz
         ¦   ¦       ¦       8fmoq3edlo-{0}-1e6hk1cokc-1e6hk1cokc.gz
-        ¦   ¦       ¦       8nkpesyoug-{0}-jwjp4es8pq-jwjp4es8pq.gz
+        ¦   ¦       ¦       8nkpesyoug-{0}-o4cwwk8vun-o4cwwk8vun.gz
         ¦   ¦       ¦       8oxtv9jbuo-{0}-oyz0vx2fzb-oyz0vx2fzb.gz
         ¦   ¦       ¦       8rd3w3qjqn-{0}-cohogsx0cz-cohogsx0cz.gz
         ¦   ¦       ¦       8sq02fv6uy-{0}-1s6p5uh3ly-1s6p5uh3ly.gz
@@ -17692,7 +17707,7 @@ C:.
         ¦   ¦       ¦       9fagwabioi-{0}-2qdryscnlr-2qdryscnlr.gz
         ¦   ¦       ¦       9hc6imzf4b-{0}-64hnwvjp9o-64hnwvjp9o.gz
         ¦   ¦       ¦       9oewe4wymg-{0}-en8mb8dgz5-en8mb8dgz5.gz
-        ¦   ¦       ¦       9qgrcguwb1-{0}-mokwz1jvc8-mokwz1jvc8.gz
+        ¦   ¦       ¦       9qgrcguwb1-{0}-0xk6kx65rv-0xk6kx65rv.gz
         ¦   ¦       ¦       a0uwyyc6fx-{0}-vecn379yn7-vecn379yn7.gz
         ¦   ¦       ¦       a5ycnt3vzi-{0}-3l9tjffia1-3l9tjffia1.gz
         ¦   ¦       ¦       ady720sofz-{0}-5map5kd04b-5map5kd04b.gz
@@ -17753,7 +17768,7 @@ C:.
         ¦   ¦       ¦       jsc31qc7ex-{0}-t2grxns8du-t2grxns8du.gz
         ¦   ¦       ¦       jsnstyjon0-{0}-er8avzl4gu-er8avzl4gu.gz
         ¦   ¦       ¦       jwrod6ajkr-{0}-mbyegcw3sd-mbyegcw3sd.gz
-        ¦   ¦       ¦       k2wy8x4jvk-{0}-7lmfzmekdr-7lmfzmekdr.gz
+        ¦   ¦       ¦       k2wy8x4jvk-{0}-fo4hw1de1m-fo4hw1de1m.gz
         ¦   ¦       ¦       kavdm37yr5-{0}-3dnonjonlq-3dnonjonlq.gz
         ¦   ¦       ¦       kqw11hqi35-{0}-13wzhx9f6z-13wzhx9f6z.gz
         ¦   ¦       ¦       ley7wd6si1-{0}-9pwjv0p5vb-9pwjv0p5vb.gz
@@ -17820,7 +17835,7 @@ C:.
         ¦   ¦       ¦       v28v4qkg9k-{0}-eabpenq3p7-eabpenq3p7.gz
         ¦   ¦       ¦       vawq56nkis-{0}-xansgjixjc-xansgjixjc.gz
         ¦   ¦       ¦       vpyfui9bok-{0}-0i6pt20k3k-0i6pt20k3k.gz
-        ¦   ¦       ¦       vxfz9f7a2r-{0}-arr44sohmd-arr44sohmd.gz
+        ¦   ¦       ¦       vxfz9f7a2r-{0}-h1yac0ch00-h1yac0ch00.gz
         ¦   ¦       ¦       vycaxakd8b-{0}-sighwnyetu-sighwnyetu.gz
         ¦   ¦       ¦       w4mleak6hf-{0}-9z5qnycnej-9z5qnycnej.gz
         ¦   ¦       ¦       wgrktqhx7f-{0}-xqsu2wsvba-xqsu2wsvba.gz
