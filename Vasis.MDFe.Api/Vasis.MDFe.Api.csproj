@@ -42,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\Model\Doc\" />
+    <Folder Include="Dtos\Model\Seg\" />
+    <Folder Include="Dtos\Model\ProdPred\" />
     <Folder Include="XMLsGerados" />
     <Folder Include="Schemas" />
   </ItemGroup>
